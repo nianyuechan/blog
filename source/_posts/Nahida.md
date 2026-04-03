@@ -22,14 +22,10 @@ toc: false
 - node.js
   Nahida是基于nodejs框架运作的，所以相当于Nahida的底层，请确保您的电脑内包含此环境
   {% externalLinkCard "Node.js官网" "https://nodejs.org/en/download" "/images/ol9RsKbgPR.webp" %}
-  如果是Windows，点击 **Windows Installer(.msi)** 就可以开始下载了，然后全部选next，他会自己配置好的
-  如果是Linux发行版，我觉得你应该更懂怎么安装
 
 - git
-  后续维护需要用到
+  虽然不是必须的，但是为了后面的部署，建议安装
   {% externalLinkCard "git官网" "https://git-scm.com/downloads" "/images/OIP-C.webp" %}
-  如果是Windows，点击 **Git for Windows** 就可以开始下载了，然后全部选next，他会自己配置好的
-  如果是Linux发行版，自带git的
 
 - mysy2
   Nahida在mysy2环境下运行的，所以也要一起安装
@@ -37,5 +33,8 @@ toc: false
 
 ### 开始安装
   首先点开安装好的mysy2，然后复制粘贴以下
-  ```bash <(curl -L gitee.com/TimeRainStarSky/TRSS_AllBot/raw/main/Install.sh)
-  ```
+```
+bash <(curl -L gitee.com/TimeRainStarSky/TRSS_AllBot/raw/main/Install.sh)
+```
+然后此时你会看到这样一个界面
+{% image /images/screenshot_20260403_190412.webp "安装界面" %}
