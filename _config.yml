@@ -4,9 +4,9 @@
 
 # Site
 title: 大家の幻想乡
-subtitle: ''
-description: ''
-keywords:
+subtitle: '技术与生活的交汇点'
+description: '大家の幻想乡 - Toshikoshi的技术与生活分享博客'
+keywords: 'Hexo, 博客, 大家の幻想乡, Toshikoshi, reimu, 前端开发, 生活'
 author: Toshikoshi
 language: zh-CN
 timezone: Asia/Shanghai
@@ -128,3 +128,28 @@ markdown_it_plus:
   typographer:
   quotes: “”‘’
   rawLaTeX: false # newly added
+
+# hexo-all-minifier options
+all_minifier: true
+html_minifier:
+  enable: true
+  ignore_error: false
+  exclude:
+css_minifier:
+  enable: true
+  exclude:
+    - '*.min.css'
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: true
+  progressive: false
