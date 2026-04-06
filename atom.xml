@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>年越·Rukawa</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <icon>https://nianyuechan.github.io/blog/icon.png</icon>
+  <id>https://nianyuechan.github.io/blog/</id>
+  <link href="https://nianyuechan.github.io/blog/" rel="alternate"/>
+  <link href="https://nianyuechan.github.io/blog/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, 年越·Rukawa</rights>
+  <subtitle>技术与生活的交汇点</subtitle>
+  <title>大家の幻想乡</title>
+  <updated>2026-04-06T08:50:49.004Z</updated>
+  <entry>
+    <author>
+      <name>年越·Rukawa</name>
+    </author>
+    <category term="技术" scheme="https://nianyuechan.github.io/blog/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="教程" scheme="https://nianyuechan.github.io/blog/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="Nahida" scheme="https://nianyuechan.github.io/blog/tags/Nahida/"/>
+    <id>https://nianyuechan.github.io/blog/2026/04/05/guide/</id>
+    <link href="https://nianyuechan.github.io/blog/2026/04/05/guide/"/>
+    <published>2026-04-04T16:00:00.000Z</published>
+    <summary>Nahida 工具的详细使用教程</summary>
+    <title>Nahida 使用教程</title>
+    <updated>2026-04-06T08:50:49.004Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>年越·Rukawa</name>
+    </author>
+    <category term="教程" scheme="https://nianyuechan.github.io/blog/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://nianyuechan.github.io/blog/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="git" scheme="https://nianyuechan.github.io/blog/tags/git/"/>
+    <category term="Nahida" scheme="https://nianyuechan.github.io/blog/tags/Nahida/"/>
+    <id>https://nianyuechan.github.io/blog/2026/04/02/Nahida/</id>
+    <link href="https://nianyuechan.github.io/blog/2026/04/02/Nahida/"/>
+    <published>2026-04-02T07:35:00.000Z</published>
+    <summary>如何搭建和使用Nahida</summary>
+    <title>Nahida搭建教程</title>
+    <updated>2026-04-04T18:18:22.916Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>年越·Rukawa</name>
+    </author>
+    <category term="技术" scheme="https://nianyuechan.github.io/blog/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="样式" scheme="https://nianyuechan.github.io/blog/tags/%E6%A0%B7%E5%BC%8F/"/>
+    <category term="测试" scheme="https://nianyuechan.github.io/blog/tags/%E6%B5%8B%E8%AF%95/"/>
+    <category term="Markdown" scheme="https://nianyuechan.github.io/blog/tags/Markdown/"/>
+    <category term="主题" scheme="https://nianyuechan.github.io/blog/tags/%E4%B8%BB%E9%A2%98/"/>
+    <id>https://nianyuechan.github.io/blog/2026/04/02/%E7%A4%BA%E4%BE%8B/</id>
+    <link href="https://nianyuechan.github.io/blog/2026/04/02/%E7%A4%BA%E4%BE%8B/"/>
+    <published>2026-04-02T04:00:00.000Z</published>
+    <summary>展示 hexo-theme-reimu 主题的各种功能和样式</summary>
+    <title>示例 - hexo-theme-reimu 功能展示</title>
+    <updated>2026-04-04T18:05:01.458Z</updated>
+  </entry>
+</feed>

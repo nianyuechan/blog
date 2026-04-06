@@ -1,0 +1,3089 @@
+  <!DOCTYPE html>
+  <html lang="zh-CN"  
+      data-theme-mode="auto"
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_a0oqhord1y';window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-CN":"复制成功 (*^▽^*)"},"fail":{"zh-CN":"复制失败 (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！';window.REIMU_CONFIG.swPath = '/blog/sw.js';window.REIMU_CONFIG.outdate = {"enable":true,"daysAgo":180,"message":{"en":"This article was last updated on {time}. Please note that the content may no longer be applicable.","zh-CN":"本文最后更新于 {time}，请注意文中内容可能已不适用。","zh-TW":"本文最後更新於 {time}，請注意文中內容可能已不適用。","ja":"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。","pt-BR":"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável."}};window.REIMU_CONFIG.code_block = {"expand":20};window.REIMU_CONFIG.base = 'https://nianyuechan.github.io/blog';</script>
+  <title>
+    Nahida 使用教程 | 大家の幻想乡
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_a0oqhord1y.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/blog/css/loader.css">
+
+    <meta name="description" content="Nahida 工具的详细使用教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nahida 使用教程">
+<meta property="og:url" content="https://nianyuechan.github.io/blog/2026/04/05/guide/index.html">
+<meta property="og:site_name" content="大家の幻想乡">
+<meta property="og:description" content="Nahida 工具的详细使用教程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-04-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-06T08:50:49.004Z">
+<meta property="article:author" content="年越·Rukawa">
+<meta property="article:tag" content="Nahida">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+      <meta name="keywords" content="Hexo, 博客, 大家の幻想乡, 年越·Rukawa, reimu, 前端开发, 生活">
+    <link rel="alternate" href="/blog/atom.xml" title="大家の幻想乡" type="application/atom+xml">
+    <link rel="shortcut icon" href="/blog/images/favicon.ico">
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
+      
+<link rel="stylesheet" href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css" integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy+Ub9QgnxUYJmwOhYCK" crossorigin="anonymous">
+
+    
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css" integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous">
+
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css" integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj+vDDLIL+xBGQU/voDBY5XE2lVh" crossorigin="anonymous">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+  <div class="notification-wrapper">
+    <h1>发现新版本</h1>
+    <p>网站好像有新内容，是否更新(ﾟ⊿ﾟ)ﾂ？</p>
+    <div class="notification-btn">
+      <button id="notification-update-btn">更新</button>
+      <button id="notification-close-btn">取消</button>
+    </div>
+  </div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation">
+        <a class="main-nav-link-wrap" href="/blog/">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">首页</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/blog/archives">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">归档</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/blog/about">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">关于</span>
+        </a>
+        <a class="main-nav-link-wrap" href="/blog/friend">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">友链</span>
+        </a>
+    <a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a>
+  </nav>
+</div>
+<header id="header" aria-label="Site header">
+    <picture></picture>
+    <img crossorigin="anonymous" fetchpriority="high" src="/blog/images/102188682_p0.png" alt="Nahida 使用教程">
+  <div id="header-outer">
+    <div id="header-title">
+          <span id="logo">
+            <h1 data-aos="slide-up">Nahida 使用教程</h1>
+          </span>
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+        </h2>
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content" class="sidebar-left"  >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container sticky">
+      <meting-js
+        theme="var(--color-link)"
+        id="2265921590"
+        server="netease"
+        type="playlist"
+        
+        
+        
+        
+        
+        
+        
+        
+        list-folded="true"
+        
+      ></meting-js>
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+          <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#nahida-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text"> Nahida 使用教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%88%97%E8%A1%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 插件列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#atlas"><span class="toc-number">1.1.1.</span> <span class="toc-text"> Atlas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arknights-plugin"><span class="toc-number">1.1.2.</span> <span class="toc-text"> arknights-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#earth-k-plugin"><span class="toc-number">1.1.3.</span> <span class="toc-text"> earth-k-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example"><span class="toc-number">1.1.4.</span> <span class="toc-text"> example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fansky_qs"><span class="toc-number">1.1.5.</span> <span class="toc-text"> FanSky_Qs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flower-plugin"><span class="toc-number">1.1.6.</span> <span class="toc-text"> flower-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#genshin"><span class="toc-number">1.1.7.</span> <span class="toc-text"> genshin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#liangshi-calc"><span class="toc-number">1.1.8.</span> <span class="toc-text"> liangshi-calc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#logier-plugin"><span class="toc-number">1.1.9.</span> <span class="toc-text"> logier-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mc-plugin"><span class="toc-number">1.1.10.</span> <span class="toc-text"> mc-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#memz-plugin"><span class="toc-number">1.1.11.</span> <span class="toc-text"> memz-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mora-plugin"><span class="toc-number">1.1.12.</span> <span class="toc-text"> mora-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nai-plugin"><span class="toc-number">1.1.13.</span> <span class="toc-text"> nai-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#phi-plugin"><span class="toc-number">1.1.14.</span> <span class="toc-text"> phi-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rconsole-plugin"><span class="toc-number">1.1.15.</span> <span class="toc-text"> rconsole-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#san-plugin"><span class="toc-number">1.1.16.</span> <span class="toc-text"> San-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#starrail-plugin"><span class="toc-number">1.1.17.</span> <span class="toc-text"> StarRail-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#system"><span class="toc-number">1.1.18.</span> <span class="toc-text"> system</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#trss-plugin"><span class="toc-number">1.1.19.</span> <span class="toc-text"> TRSS-Plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#waves-plugin"><span class="toc-number">1.1.20.</span> <span class="toc-text"> waves-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xianxin-plugin"><span class="toc-number">1.1.21.</span> <span class="toc-text"> xianxin-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xitian-plugin"><span class="toc-number">1.1.22.</span> <span class="toc-text"> xitian-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#y-tian-plugin"><span class="toc-number">1.1.23.</span> <span class="toc-text"> y-tian-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yenai-plugin"><span class="toc-number">1.1.24.</span> <span class="toc-text"> yenai-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yunzai-plugin-deer-pipe"><span class="toc-number">1.1.25.</span> <span class="toc-text"> yunzai-plugin-deer-pipe</span></a></li></ol></li></ol></li></ol>
+</div>
+</div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/blog/avatar/b_3d4ccbe76e56e3501484e4d110ddecc1.jpg" data-sizes="auto" alt="年越·Rukawa" class="lazyload">
+  <div class="sidebar-author-name">年越·Rukawa</div>
+  <div class="sidebar-description">大家の幻想乡 - 年越·Rukawa的技术与生活分享博客</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">2</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">7</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/blog/" aria-label="首页"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">首页</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/blog/archives" aria-label="归档"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">归档</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/blog/about" aria-label="关于"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">关于</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/blog/friend" aria-label="友链"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">友链</div>
+      </div>
+</div>
+</div>
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="post-guide" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2026-04-04T16:00:00.000Z" itemprop="datePublished">2026-04-05</time>
+    <time style="display: none;" id="post-update-time">2026-04-06</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <div class="warning custom-block" id="outdate-blockquote" style="display: none;">
+          <p class="custom-block-title">WARNING</p>
+          <p></p>
+        </div>
+        <h1 id="nahida-使用教程"><a class="markdownIt-Anchor" href="#nahida-使用教程"></a> Nahida 使用教程</h1>
+<h2 id="插件列表"><a class="markdownIt-Anchor" href="#插件列表"></a> 插件列表</h2>
+<h3 id="atlas"><a class="markdownIt-Anchor" href="#atlas"></a> Atlas</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://gitee.com/Nwflower/atlas" title="Atlas 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">Atlas 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://gitee.com/Nwflower/atlas</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：适用于V3版本及以上Yunzai-Bot的图鉴查询插件，可通过Yunzai-Bot查询游戏图鉴，插件代码严格遵循ES6规范</li>
+<li><strong>支持的图鉴库</strong>：
+<ul>
+<li>原神图鉴库：Genshin-Atlas</li>
+<li>崩坏：星穹铁道图鉴库：star-rail-atlas</li>
+<li>绝区零图鉴库：zzz-atlas</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>：
+<ul>
+<li>GitHub：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/Nwflower/atlas ./plugins/Atlas/</span><br></pre></td></tr></table></figure>
+</li>
+<li>Gitee镜像：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/Nwflower/atlas ./plugins/Atlas/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><strong>获取图片资源</strong>：
+<ul>
+<li>原神：发送<code>#图鉴升级</code></li>
+<li>星穹铁道：发送<code>#星铁图鉴升级</code></li>
+<li>绝区零：发送<code>#绝区零图鉴升级</code></li>
+</ul>
+</li>
+<li><strong>插件更新</strong>：发送<code>#图鉴插件升级</code></li>
+</ol>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><code>^[#/](图鉴|wiki|百科|Atlas)(\s*)(帮助|菜单|功能|help)</code></li>
+<li><code>^[#/]?.+(图鉴)*</code></li>
+<li><code>^[#/](原魔).*(生命值|攻击力).*</code></li>
+<li><code>#芙宁娜材料</code> - 查询角色突破材料信息（原神）</li>
+<li><code>#黄金剧团</code> - 查询圣遗物信息（原神）</li>
+<li><code>#苍古自由之誓</code> - 查询武器信息（原神）</li>
+<li><code>#甜甜花酿鸡</code> - 查询食物信息（原神）</li>
+<li><code>#无相之草</code> - 查询敌对单位信息（原神）</li>
+<li><code>#鸣草</code> - 查询区域特产信息（原神）</li>
+<li><code>*阮梅</code> - 查询角色信息（星穹铁道）</li>
+<li><code>*阮梅攻略</code> - 查询角色攻略指南（星穹铁道）</li>
+<li><code>*镜中故我</code> - 查询光锥信息（星穹铁道）</li>
+<li><code>*不老者的仙舟</code> - 查询遗器信息（星穹铁道）</li>
+<li><code>*外宇宙之冰</code> - 查询敌对单位信息（星穹铁道）</li>
+<li><code>%格莉丝·霍华德</code> - 查询角色信息（绝区零）</li>
+<li><code>%加农转子</code> - 查询音擎信息（绝区零）</li>
+<li><code>%大安比材料</code> - 查询角色突破材料信息（绝区零）</li>
+<li><code>#武器索引</code> - 唤出武器索引</li>
+<li><code>#原魔</code> - 唤出原魔索引</li>
+<li><code>#圣遗物</code> - 唤出圣遗物一级索引</li>
+<li><code>七圣召唤</code> - 唤出七圣召唤卡牌索引</li>
+<li><code>#图鉴升级</code> - 获取原神图鉴图片</li>
+<li><code>#星铁图鉴升级</code> - 获取星穹铁道图鉴图片</li>
+<li><code>#绝区零图鉴升级</code> - 获取绝区零图鉴图片</li>
+<li><code>#github原神图鉴升级</code> - 从Github端获取原神图鉴图片</li>
+<li><code>#github星铁图鉴升级</code> - 从Github端获取星穹铁道图鉴图片</li>
+<li><code>#github绝区零图鉴升级</code> - 从Github端获取绝区零图鉴图片</li>
+<li><code>#图鉴插件升级</code> - 更新插件代码</li>
+</ul>
+</li>
+<li><strong>兼容性设置</strong>：
+<ul>
+<li>插件支持动态优先级</li>
+<li>配置文件：<code>Atlas\resource\config.yaml</code></li>
+<li><code>priority</code>：优先级（默认为10，数值越小越不容易被抢指令）</li>
+<li><code>success</code>：匹配指令拦截（默认为TRUE，改为FALSE后会继续传递指令）</li>
+</ul>
+</li>
+</ul>
+<h3 id="arknights-plugin"><a class="markdownIt-Anchor" href="#arknights-plugin"></a> arknights-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://github.com/gxy12345/arknights-plugin" title="arknights-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">arknights-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://github.com/gxy12345/arknights-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：基于森空岛API开发的Yunzai Bot明日方舟插件</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>：
+<ul>
+<li>GitHub：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/gxy12345/arknights-plugin.git ./plugins/arknights-plugin/</span><br><span class="line">pnpm install --filter=arknights-plugin</span><br></pre></td></tr></table></figure>
+</li>
+<li>Gitee镜像：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitee.com/windoge/arknights-plugin.git ./plugins/arknights-plugin/</span><br><span class="line">pnpm install --filter=arknights-plugin</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>森空岛cred管理</strong>：绑定、扫码绑定、删除、查询cred和token</li>
+<li><strong>游戏信息查询</strong>：便签、签到、抽卡记录、抽卡分析、干员练度卡片、练度统计、练度分析、养成计算、肉鸽、干员别名、理智、剿灭、日常/周常</li>
+<li><strong>其他查询</strong>：公招查询、刷图推荐、公告查询、活动查询、养成统计</li>
+<li><strong>MAA远程控制</strong>：配合MAA远控API服务使用</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#方舟插件帮助</code> / <code>/帮助</code> / <code>~帮助</code> - 打开帮助菜单</li>
+<li><code>#方舟插件更新</code> / <code>/更新</code> / <code>~更新</code> - 更新插件</li>
+</ul>
+</li>
+<li><strong>森空岛cred管理</strong>：
+<ul>
+<li><code>/绑定</code> - 绑定森空岛cred</li>
+<li><code>/扫码绑定</code> - 通过森空岛APP扫码绑定</li>
+<li><code>/删除cred</code> - 删除已绑定的森空岛cred</li>
+<li><code>/我的cred</code> - 查询已绑定的森空岛cred</li>
+<li><code>/我的token</code> - 查询已绑定的token</li>
+<li><code>/cred帮助</code> - 查询森空岛cred获取帮助文档</li>
+</ul>
+</li>
+<li><strong>游戏信息查询</strong>：
+<ul>
+<li><code>/便签</code> - 森空岛个人信息一图流</li>
+<li><code>/签到</code> - 森空岛签到（支持自动签到）</li>
+<li><code>/抽卡记录</code> / <code>/寻访记录</code> - 查询账号近期的详细抽卡记录</li>
+<li><code>/抽卡分析</code> / <code>/寻访分析</code> - 查询账号整体抽卡分析图</li>
+<li><code>/叔叔</code> / <code>/玛恩纳</code> - 查看干员练度卡片</li>
+<li><code>/练度统计</code> / <code>/近卫练度统计</code> - 基于森空岛API查询干员练度汇总</li>
+<li><code>/练度卡片</code> / <code>/练度面板</code> - 新版的练度统计</li>
+<li><code>/练度分析</code> / <code>/BOX分析</code> - 分析BOX练度数据</li>
+<li><code>/养成计算 [干员名称] [精英阶段] [等级] [技能1] [技能2] [技能3] [模组1] [模组2] [模组3]</code> - 根据当前BOX情况，计算养成干员所需材料</li>
+<li><code>/肉鸽</code> / <code>/集成战略</code> - 查看各个主题肉鸽的完成情况</li>
+<li><code>/添加别名 斩业星熊 新熊</code> / <code>/查看别名 斩业星熊</code> / <code>/删除别名 斩业星熊 新熊</code> - 自定义干员别名</li>
+<li><code>/理智</code> - 通过森空岛接口查询理智</li>
+<li><code>/剿灭</code> - 通过森空岛接口查询剿灭周常</li>
+<li><code>/日常</code> / <code>/周常</code> - 通过森空岛接口查询周常完成</li>
+</ul>
+</li>
+<li><strong>其他查询</strong>：
+<ul>
+<li><code>/公招查询 支援 远程位</code> - 公招查询，同时在结果中标记干员持有情况</li>
+<li><code>/刷图推荐</code> / <code>/材料掉率</code> - 从一图流获取材料掉率表</li>
+<li><code>/公告</code> / <code>/公告列表</code> - 查询官方发布的公告</li>
+<li><code>/公告1</code> / <code>/公告2</code> - 查看具体的公告内容</li>
+<li><code>/活动</code> / <code>/活动列表</code> - 查询近期即将开始或结束的活动（3天内）</li>
+<li><code>/&#123;干员名/别名&#125;养成统计</code> / <code>/&#123;干员名/别名&#125;养成推荐</code> - 从yituliu获取养成统计</li>
+<li><code>/&#123;干员名/别名&#125;</code> - 查询干员信息</li>
+</ul>
+</li>
+<li><strong>MAA远程控制</strong>（需要配合MAA远控API服务）：
+<ul>
+<li><code>/MAA帮助</code> - 查看绑定帮助</li>
+<li><code>/我的MAA</code> - 查看已绑定的设备</li>
+<li><code>/MAA+(指令)</code> - 下发MAA任务</li>
+<li><code>/MAA任务状态</code> - 查询已下发的任务状态</li>
+</ul>
+</li>
+<li><strong>注</strong>：所有命令的&quot;/“均可使用”~“或”#方舟插件&quot;替换</li>
+</ul>
+</li>
+</ul>
+<h3 id="earth-k-plugin"><a class="markdownIt-Anchor" href="#earth-k-plugin"></a> earth-k-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://github.com/SmallK111407/earth-k-plugin" title="earth-k-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">earth-k-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://github.com/SmallK111407/earth-k-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：Earth-K-Plugin 是一个 Yunzai-Bot 的附属插件，主要提供了原史及部分功能</li>
+<li><strong>注意事项</strong>：需要配置 FFmpeg 变量才能正常使用点歌、猜语音、角色语音等功能</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>：
+<ul>
+<li>GitHub：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+<li>Gitee镜像：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/SmallK111407/earth-k-plugin.git ./plugins/earth-k-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><strong>更新插件</strong>：管理员发送 <code>#土块更新</code> 即可自动更新</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>群聊小游戏</strong>：你说我猜/你画我猜、猜原神、练习记忆力、打我（猜拳）</li>
+<li><strong>内容查询</strong>：角色视频/过场动画、了解人物、原史功能</li>
+<li><strong>娱乐功能</strong>：ai画图、周易卜卦、猜语音、点歌、点视频、点漫画、点小说、全角色语音、表情包、弹琴</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#土块帮助</code> - 打开帮助菜单</li>
+<li><code>#土块版本</code> - 查看当前版本更新内容</li>
+<li><code>#土块更新</code> - 自动更新插件</li>
+</ul>
+</li>
+<li><strong>AI 画图</strong>（部分功能仅爱发电用户可用）：
+<ul>
+<li><code>#绘个图</code> / <code>#预设</code> / <code>#云预设</code> / <code>#随机画图</code> - 让 AI 画图</li>
+<li><code>#取消画图</code> / <code>#所有人可画</code> / <code>#仅我可画</code> - 画图权限设置</li>
+<li><code>#土块画图撤回(...)</code> / <code>#土块画图冷却(...)</code> - 画图管理</li>
+<li><code>#土块鉴黄开启</code> / <code>#土块鉴黄关闭</code> - 鉴黄开关</li>
+<li><code>#新增屏蔽词(...)</code> / <code>#查看屏蔽词</code> / <code>#删除屏蔽词</code> - 屏蔽词管理</li>
+<li><code>#查看所有预设</code> / <code>#新增预设(...)</code> - 预设管理</li>
+<li><code>#土块画图规模(...)</code> / <code>#土块画图采样(...)</code> / <code>#土块画图步数(...)</code> - 画图参数设置</li>
+<li><code>#查看画图设置</code> - 查看画图设置</li>
+<li><code>#开启代理</code> / <code>#关闭代理</code> - 代理开关</li>
+<li><code>#开启参数显示</code> / <code>#关闭参数显示</code> - 参数显示开关</li>
+<li><code>#开启词条回复</code> / <code>#关闭词条回复</code> - 词条回复开关</li>
+<li><code>#填写密钥(...)</code> - 填写密钥</li>
+<li><code>#查看模型</code> - 查看模型</li>
+<li><code>#我的二次元</code> / <code>#二次元的(...)</code> - 二次元相关</li>
+<li><code>#图生图(...)</code> / <code>#嗯哼(...)</code> / <code>#离谱(...)</code> / <code>#嘿嘿(...)</code> / <code>#生气(...)</code> / <code>#库库(...)</code> / <code>#嚯嚯(...)</code> / <code>#呜呜(...)</code> / <code>#(...)图</code> / <code>#手办(...)</code> / <code>#归终(...)</code> - 图生图相关</li>
+<li><code>#填写ak(...)</code> / <code>#填写sk(...)</code> - 填写密钥</li>
+<li><code>#看魔图(...)</code> / <code>#看原魔法(...)</code> - 查看魔法相关</li>
+<li><code>#切换接口(...)</code> / <code>#新增接口(...)</code> / <code>#查看接口</code> / <code>#删除接口(...)</code> - 接口管理</li>
+<li><code>#开启大尺寸</code> / <code>#关闭大尺寸</code> / <code>#开启长图</code> / <code>#开启宽图</code> / <code>#开启随机图</code> / <code>#开启大长图</code> / <code>#开启大宽图</code> - 尺寸设置</li>
+<li><code>#关闭鉴黄发图</code> / <code>#开启鉴黄发图</code> - 鉴黄发图开关</li>
+<li><code>#土块画图封禁</code> / <code>#土块画图解禁</code> - 画图封禁/解禁</li>
+<li><code>#土块画图封群</code> / <code>#土块画图解封群</code> - 画图封群/解封群</li>
+<li><code>#新增生草预设(...)</code> / <code>#查看生草预设(...)</code> / <code>#删除生草预设(...)</code> - 生草预设管理</li>
+<li><code>#查看画图模型</code> / <code>#切换画图模型(...)</code> - 画图模型管理</li>
+<li><code>#今日出图</code> - 今日出图</li>
+<li><code>#开启云预设</code> - 开启云预设</li>
+<li><code>#查询剩余次数(...)</code> - 查询剩余次数</li>
+<li><code>#随机次数(...)</code> - 随机次数</li>
+<li><code>#设置每日出图(...)</code> - 设置每日出图</li>
+<li><code>#开启图链模式</code> / <code>#关闭图链模式</code> - 图链模式开关</li>
+<li><code>#开启涩图链接</code> / <code>#关闭涩图链接</code> - 涩图链接开关</li>
+<li><code>#开启放大计算(...)</code> - 开启放大计算</li>
+<li><code>#画图帮助</code> - 画图帮助</li>
+</ul>
+</li>
+<li><strong>群聊小游戏</strong>：
+<ul>
+<li><code>#加入你画我猜</code> / <code>#开始你画我猜</code> / <code>#发起你画我猜</code> / <code>#结束你画我猜</code> - 你画我猜</li>
+<li><code>#加入你说我猜</code> / <code>#开始你说我猜</code> / <code>#发起你说我猜</code> / <code>#结束你说我猜</code> - 你说我猜</li>
+<li><code>#猜原神</code> / <code>#?.*</code> / <code>#看答案</code> / <code>#提示</code> / <code>#重置猜原神分数</code> - 猜原神</li>
+<li><code>#练习记忆力</code> / <code>#我猜(...)</code> / <code>#重置分数</code> - 练习记忆力</li>
+<li><code>#打我</code> / <code>石头</code> / <code>剪刀</code> / <code>布</code> / <code>(...)#打他(...)</code> - 和机器人猜拳</li>
+<li><code>#加入大话骰</code> / <code>#开始大话骰</code> / <code>#发起大话骰</code> / <code>#结束大话骰</code> / <code>#大话骰规则</code> - 大话骰</li>
+<li><code>#加入一站到底</code> / <code>#开始一站到底</code> / <code>#发起一站到底</code> / <code>#结束一站到底</code> - 一站到底</li>
+<li><code>#加入故事接龙</code> / <code>#开始故事接龙</code> / <code>#发起故事接龙</code> / <code>#切换模式2</code> / <code>#结束故事接龙</code> - 故事接龙</li>
+<li><code>#挑选幸运儿</code> - 挑选幸运儿</li>
+<li><code>#测试智商</code> - 测试智商</li>
+</ul>
+</li>
+<li><strong>内容查询与娱乐</strong>：
+<ul>
+<li><code>#角色视频列表</code> / <code>#角色视频(...)</code> - 角色视频</li>
+<li><code>#过场动画列表</code> / <code>#过场动画(...)</code> - 过场动画</li>
+<li><code>#了解(...)</code> - 了解某位角色</li>
+<li><code>#卜卦</code> - 周易卜卦</li>
+<li><code>#今日运势</code> - 今日运势</li>
+<li><code>#娶群友</code> / <code>#闹离婚</code> / <code>#强娶(...)</code> / <code>#我对象呢</code> / <code>#抢群友(...)</code> / <code>#群对象列表</code> - 娶群友</li>
+<li><code>#?.*)游戏</code> / <code>#游戏下一页</code> / <code>#游戏上一页</code> - 游戏相关</li>
+<li><code>#?.*</code> - 其他命令</li>
+<li><code>#魔法目录</code> / <code>#目录(...)</code> - 魔法目录</li>
+<li><code>#预览图(...)</code> - 预览图</li>
+<li><code>#写答卷(...)</code> - 写答卷</li>
+<li><code>#*(土块)?发电报</code> / <code>#*最近发电</code> - 发电报</li>
+</ul>
+</li>
+<li><strong>多媒体娱乐</strong>：
+<ul>
+<li><code>#点漫画(...)</code> / <code>#看漫画(...)</code> / <code>#选漫画(...)</code> / <code>#取消漫画搜索</code> - 点漫画</li>
+<li><code>#点哔咔漫画(...)</code> / <code>#看哔咔漫画(...)</code> - 点哔咔漫画</li>
+<li><code>#点小说(...)</code> / <code>#看小说(...)</code> / <code>#选小说(...)</code> / <code>#取消小说搜索</code> - 点小说</li>
+<li><code>#点视频(...)</code> / <code>#看视频(...)</code> / <code>#选视频(...)</code> / <code>#取消视频搜索</code> - 点视频</li>
+<li><code>#?b|?站视频(...)</code> / <code>#(b|?站下一页</code> / <code>#(b|?站上一页</code> - B站视频</li>
+<li><code>https://www.bilibili.com(...)</code> / <code>https://b23.tv(...)</code> / <code>https://bili2233.cn(...)</code> - B站链接</li>
+<li><code>#我的歌单</code> / <code>#顺序播放</code> / <code>#下一首</code> / <code>#上一首</code> / <code>#播歌姬(...)</code> / <code>#新增歌单</code> / <code>#去除歌单</code> - 点歌</li>
+<li><code>#酷我(...)</code> - 酷我音乐</li>
+</ul>
+</li>
+<li><strong>其他功能</strong>：
+<ul>
+<li><code>#钢琴(...)</code> / <code>#八音盒(...)</code> / <code>#古筝(...)</code> / <code>#吉他(...)</code> / <code>#萨克斯(...)</code> / <code>#小提琴(...)</code> / <code>#吹箫(...)</code> / <code>#西域乐(...)</code> - 弹琴</li>
+<li><code>#弹琴帮助</code> - 弹琴帮助</li>
+<li><code>#(开启|关闭)表情合成</code> - 表情合成开关</li>
+<li><code>#?土块表情开启</code> / <code>#?土块表情关闭</code> / <code>#?土块表情列表</code> - 表情管理</li>
+<li><code>/^\p&#123;Emoji_Presentation&#125;&#123;2&#125;$/gmu</code> - 表情合成</li>
+<li><code>#机器人</code> / <code>#结束对话</code> / <code>#(...)问(...)</code> - 机器人对话</li>
+<li><code>#查看安装插件</code> / <code>#查看所有插件</code> / <code>#查看未装插件</code> / <code>#安装插件</code> / <code>#插件详细</code> - 插件管理</li>
+<li><code>#?土块状(态)?(pro)?</code> - 土块状态</li>
+<li><code>#开始</code> - 开始</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="example"><a class="markdownIt-Anchor" href="#example"></a> example</h3>
+<ul>
+<li><strong>命令列表</strong>：
+<ul>
+<li><code>^?.*$</code></li>
+<li><code>^#复读$</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="fansky_qs"><a class="markdownIt-Anchor" href="#fansky_qs"></a> FanSky_Qs</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://gitee.com/FanSky_Qs/FanSky_Qs" title="FanSky_Qs 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">FanSky_Qs 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://gitee.com/FanSky_Qs/FanSky_Qs</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：基于 Yunzai-Bot 机器人的插件，实现提瓦特小助手系统(开发中)、打卡-魔晶系统、GPT3.5 等模型聊天、票房查询、各模型切换、设置模型人设、点赞等功能</li>
+<li><strong>注意事项</strong>：严禁将 FanSky_Qs 用于任何商业用途</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>（两种方法二选一）：
+<ul>
+<li>方法1（Miao-Yunzai 根目录）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/FanSky_Qs/FanSky_Qs.git ./plugins/FanSky_Qs/</span><br><span class="line"><span class="built_in">cd</span> plugins/FanSky_Qs</span><br><span class="line">pnpm install</span><br></pre></td></tr></table></figure>
+</li>
+<li>方法2（Miao-Yunzai/plugins 目录）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/FanSky_Qs/FanSky_Qs.git</span><br><span class="line"><span class="built_in">cd</span> FanSky_Qs</span><br><span class="line">pnpm install</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><strong>更新插件</strong>：
+<ul>
+<li>普通更新：<code>#fans更新</code></li>
+<li>强制更新：<code>#fans强制更新</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>提瓦特小助手系统</strong>：队伍伤害、队伍面板、历史伤害、伤害排行</li>
+<li><strong>打卡-魔晶系统</strong>：打卡、冒泡、首次打卡时间、打卡统计、卡牌系统（开发中）</li>
+<li><strong>OpenAI 系统</strong>：GPT3.5 等模型记忆聊天、切换多模型、设置模型人设、设置模型打卡绑定、设置模型模式、拉黑语言模型使用者</li>
+<li><strong>单功能系统</strong>：电影票房查询、机器人对你发病、一眼丁真、点赞、派蒙的星光考察</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#fans帮助</code> - 打开帮助菜单</li>
+<li><code>#检查(仓库|github|fan)更新</code> - 检查更新</li>
+<li><code>#(fan|Fansky|Fan|fans)(强制)?更新</code> - 更新插件</li>
+<li><code>#(fan|fans|fansky)设置(...)</code> - 设置相关设置</li>
+<li><code>#清屏|#清理屏幕|#清除记录|#清空历史</code> - 清空记录</li>
+<li><code>#批量撤回|#大量撤回</code> - 批量撤回</li>
+</ul>
+</li>
+<li><strong>提瓦特小助手系统</strong>：
+<ul>
+<li><code>#队伍伤害(详情|过程|全图)?(uid)?(角色)</code> - 查询队伍伤害</li>
+<li><code>#单人评级(uid)?(角色)</code> - 单人评级</li>
+<li><code>#更新小助手配置</code> - 更新小助手配置</li>
+<li><code>#成就(排行|排名|查询|统计)(...)</code> - 成就排行</li>
+<li><code>#宝箱(排行|排名|查询|统计)(...)</code> - 宝箱排行</li>
+<li><code>#历史队伍伤害(DPS|Dps|dps|总伤害|总伤)?(uid)?(...)</code> - 历史队伍伤害</li>
+</ul>
+</li>
+<li><strong>打卡-魔晶系统</strong>：
+<ul>
+<li><code>#打卡|#冒泡|#冒泡姬</code> - 打卡/冒泡</li>
+<li><code>#首次打卡时间|#最开始打卡时间|#第一次打卡时间</code> - 首次打卡时间</li>
+<li><code>#打卡用户|#打卡统计|#打卡记录|#打卡总计</code> - 打卡统计</li>
+<li><code>#重置打卡|#清除打卡</code> - 重置打卡</li>
+<li><code>#(魔晶|Fan|fan)(抽卡|抽角色|抽奖)</code> - 魔晶抽卡</li>
+<li><code>#(减|减少|扣|扣除|加|充|增|增加|添加|充值)(魔晶|魔石|石头)(...)</code> - 魔晶管理</li>
+<li><code>#emoji猜成语</code> - emoji猜成语</li>
+</ul>
+</li>
+<li><strong>OpenAI 系统</strong>：
+<ul>
+<li><code>#重置对话|#重置聊天|#重置记忆</code> - 重置对话</li>
+<li><code>#(拉黑|加黑|禁止|禁用)模型使用(...)</code> - 拉黑模型使用者</li>
+<li><code>#(设置|更改|修改)模型人设(...)</code> - 设置模型人设</li>
+<li><code>#(设置|更改|修改)模型模式(...)</code> - 设置模型模式</li>
+<li><code>#(设置|更改|修改)模型打卡(开启|打开|启用|关闭|不启用)</code> - 模型打卡联动</li>
+<li><code>#(设置|更改|修改|添加|更换|查看)(OpenAI|模型|语言模型|OpenAI模型)key(...)</code> - 设置模型key</li>
+<li><code>#(设置|更改|修改)(OpenAI|AI|模型|对话)(开启|打开|启用|关闭|不启用)</code> - 模型开关</li>
+<li><code>#(OpenAI|模型|语言模型|OpenAI模型|key)(额度|余额|剩余|使用)(查询|查看|查找)</code> - 查询额度</li>
+<li><code>#设置(OpenAI|模型|语言模型|OpenAI模型)转回合(\d+)</code> - 设置回合数</li>
+<li><code>#(开启|打开|open|关闭|禁用|关机)?(模型|AI|OpenAI|ai|聊天)(\d+)</code> - 模型切换</li>
+<li><code>#(use|USE|使用)(OpenAI|AI|模型|对话|语言)(人设|设定|预设)(\d+)</code> - 使用人设</li>
+<li><code>#(OpenAI|AI|模型|对话|语言)(人设|设定|预设)(列表|表单|表|集合)</code> - 人设列表</li>
+<li><code>#(设置|删除)全局人设(...)</code> - 全局人设</li>
+<li><code>#(设置|更改)模型代理地址(...)</code> - 模型代理地址</li>
+<li><code>#查询模型密钥(...)</code> - 查询模型密钥</li>
+<li><code>#(设置|删除)fan代理(...)</code> - fan代理</li>
+<li><code>/.*/i</code> - 艾特机器人对话</li>
+</ul>
+</li>
+<li><strong>单功能系统</strong>：
+<ul>
+<li><code>#点赞|#赞我|#点zan</code> - 点赞</li>
+<li><code>#(开启|打开|open|关闭|启用)(fan|Fansky|Fan|fans)点赞</code> - 点赞开关</li>
+<li><code>#(电影|猫眼|实时)?票房</code> - 电影票房</li>
+<li><code>#一眼丁真|#一眼鼎真|#一眼定真|#一眼顶针|#遗言顶针|#遗言鼎真|#遗言丁真|#遗言定真</code> - 一眼丁真</li>
+<li><code>#(发病|发电|发癫|发疯)(...)</code> - 机器人发病</li>
+<li><code>#鸡哥|#ikun|#小黑子|#小ji子|#小鸡子|#村路人|#纯路人|#纯鹿人|#个人练习生|#真虾头|#感觉没必要|#一眼丁鸡|#一眼丁ji|#cxk</code> - 鸡哥相关</li>
+<li><code>#抽象帮助|#cxbz</code> - 抽象帮助</li>
+<li><code>#抽象|#cx</code> - 抽象</li>
+<li><code>#还抽|#hc</code> - 还抽</li>
+<li><code>#化学|#hx</code> - 化学</li>
+<li><code>#转拼|#zp</code> - 转拼</li>
+</ul>
+</li>
+<li><strong>图片相关</strong>：
+<ul>
+<li><code>#(更新|下载|载入|加载)(d|弔|吊|屌|diao|dio|碉|雕|吊|弔)</code> - 更新弔图</li>
+<li><code>#(更新|下载|载入|加载)(l|long|龙|隆|聋|L|笼|浓|农|龙|隆)</code> - 更新龙图</li>
+<li><code>#(来点|给点|发|来|给)?(Diao|Dio|dio|D|d|弔|屌|叼|掉|迪奥|雕|貂|碉|鵰|刁|吊|diao)图</code> - 弔图</li>
+<li><code>#(加|增加|增|add|加入)(Diao|d|D|Dio|dio|弔|屌|叼|掉|迪奥|雕|貂|碉|鵰|刁|吊|diao)图(...)</code> - 添加弔图</li>
+<li><code>#(有多少|现在有多少|how|有几个)?(Diao|Dio|dio|D|d|弔|屌|叼|掉|迪奥|雕|貂|碉|鵰|刁|吊|diao)图(...)</code> - 弔图数量</li>
+<li><code>#(来点|给点|发|来|给)?(long|龙|nong|聋|隆|l|L)图</code> - 龙图</li>
+<li><code>#(加|增加|增|add|加入)(long|龙|nong|聋|隆|l|L)图(...)</code> - 添加龙图</li>
+<li><code>#(有多少|现在有多少|how|有几个)?(long|龙|nong|聋|隆|l|L)图(...)</code> - 龙图数量</li>
+<li><code>#dd(...)</code> - dd相关</li>
+</ul>
+</li>
+<li><strong>其他</strong>：
+<ul>
+<li><code>#拉黑|#解黑|#取消拉黑(QQ|Q群|QQ群|群)?(...)</code> - 拉黑/解黑</li>
+<li><code>#加白|#加白群|#添加白名单|#添加白名单群(Q群|QQ群|群)?(...)</code> - 加白</li>
+<li><code>#清空所有|#清空全部|#清除所有|#清除全部</code> - 清空所有</li>
+<li><code>/^🌨️?/</code> - 天气相关</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="flower-plugin"><a class="markdownIt-Anchor" href="#flower-plugin"></a> flower-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://gitee.com/Nwflower/flower-plugin" title="flower-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">flower-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://gitee.com/Nwflower/flower-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：Yunzai-Bot V3 的插件包，主要提供拓展抽卡功能，旨在不修改原卡池信息的情况下提供自定义卡池的拓展</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>该插件已停止功能的维护与更新，非必要请勿发起 issue，目前仅做卡池更新维护</li>
+<li>严禁用于任何商业用途和非法行为</li>
+<li>百连功能可能会对服务器产生较大负载，小型服务器建议卸载本插件</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>：
+<ul>
+<li>GitHub：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/Nwflower/flower-plugin.git ./plugins/flower-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+<li>Gitee镜像：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/Nwflower/flower-plugin.git ./plugins/flower-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>抽卡功能</strong>：百连、单抽、转生</li>
+<li><strong>管理功能</strong>：设置头衔、抽卡设置、设置抽卡</li>
+<li><strong>查询功能</strong>：我的纠缠之缘</li>
+<li><strong>其他功能</strong>：文字狱（违禁词管控）、隐形拉黑</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#抽卡(插件)?(强制)?更新</code> - 更新插件</li>
+<li><code>#抽卡(插件)?版本(本)?</code> - 查看插件版本</li>
+<li><code>#系统占用</code> - 查看系统占用</li>
+</ul>
+</li>
+<li><strong>抽卡功能</strong>：
+<ul>
+<li><code>#(原神)?转生</code> - 转生为任意角色</li>
+<li><code>百连</code> - 一次性进行多次十连</li>
+<li><code>单抽</code> - 单抽一次指定卡池</li>
+</ul>
+</li>
+<li><strong>抽卡设置</strong>：
+<ul>
+<li><code>#抽卡设置(自定义|百连|小保底概率|五星角色概率|四星角色概率|五星武器概率|四星武器概率|概率复位|卡池同步|卡池自动同步|五星角色|四星角色|五星武器|四星武器|随机卡池|转生间隔|违禁词|屏蔽词)?(...)</code> - 设置抽卡参数</li>
+<li><code>#设置抽卡(蓝球|粉球|撤回时间)?(...)</code> - 管理抽卡设置</li>
+<li><code>#(我的|领取|查询|查看)(纠缠|相遇|粉|蓝)(之缘)?</code> - 查看剩余蓝粉球</li>
+</ul>
+</li>
+<li><strong>管理功能</strong>：
+<ul>
+<li><code>#设置头衔(...)</code> - 给群友设置头衔（机器人需是群主）</li>
+<li><code>#*屏蔽(本群|全局)?(...)</code> - 屏蔽内容</li>
+<li><code>#(解除|删除|取消)屏蔽(本群|全局)?(...)</code> - 解除屏蔽</li>
+<li><code>#屏蔽词列表</code> - 查看屏蔽词列表</li>
+<li><code>文字狱</code> - 违禁词管控（机器人需是管理员）</li>
+</ul>
+</li>
+<li><strong>隐形拉黑</strong>：
+<ul>
+<li><code>#隐形拉黑[0-9]*</code> - 隐形拉黑用户</li>
+<li><code>#取消隐形拉黑[0-9]*</code> - 取消隐形拉黑</li>
+<li><code>#隐形拉黑(名单|列表)</code> - 查看隐形拉黑名单</li>
+</ul>
+</li>
+<li><strong>其他</strong>：
+<ul>
+<li><code>#(全部面板更新|更新全部面板|获取游戏角色详情|更新面板|面板更新)(...)</code> - 面板更新</li>
+<li><code>面板</code> - 面板查询</li>
+<li><code>体力</code> - 体力查询</li>
+<li><code>.*</code> - 其他命令</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="genshin"><a class="markdownIt-Anchor" href="#genshin"></a> genshin</h3>
+<ul>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>别名管理</strong>：
+<ul>
+<li><code>#(星铁)?(设置|配置)(...)(别名|昵称)</code> - 设置别名/昵称</li>
+<li><code>#(星铁)?删除(别名|昵称)(...)</code> - 删除别名/昵称</li>
+<li><code>#(星铁)?(...)(别名|昵称)</code> - 查看别名/昵称</li>
+</ul>
+</li>
+<li><strong>养成计算</strong>：
+<ul>
+<li><code>#*(星铁)?(...)(养成|计算)(...)</code> - 养成计算</li>
+<li><code>#*(星铁)?角色(养成|计算|养成计算)</code> - 角色养成计算</li>
+<li><code>#*尘歌壶模数(养成|计算|养成计算)</code> - 尘歌壶模数计算</li>
+<li><code>#*尘歌壶(模数|养成|养成计算)(uid)</code> - 尘歌壶养成计算</li>
+</ul>
+</li>
+<li><strong>Cookie 配置</strong>：
+<ul>
+<li><code>#配置cookie</code> / <code>#配置公共查询cookie</code> - 配置 Cookie</li>
+<li><code>#使用(全部|用户)ck</code> - 使用 Cookie</li>
+</ul>
+</li>
+<li><strong>兑换码</strong>：
+<ul>
+<li><code>(原神|星铁|崩铁|崩三|崩坏三|崩坏3|绝区零)?(直播|前瞻)?兑换码</code> - 兑换码查询</li>
+<li><code>#(原神|星铁|绝区零)?(兑换码使用|cdk-u)...</code> - 兑换码使用</li>
+</ul>
+</li>
+<li><strong>留影/生日</strong>：
+<ul>
+<li><code>#留影(叙佳话)?</code> / <code>#生日</code> / <code>#角色生日</code> - 留影/生日</li>
+</ul>
+</li>
+<li><strong>公告/资讯/活动</strong>：
+<ul>
+<li><code>#*(官方|星铁|原神|崩坏三|崩三|绝区零|崩坏二|崩二|崩坏学园二|未定|未定事件簿)?(公告|资讯|活动)(列表|[0-9])*</code> - 公告/资讯/活动查询</li>
+<li><code>#米游社(...)</code> / <code>#mys(...)</code> - 米游社相关</li>
+<li><code>(bbs.mihoyo.com|miyoushe.com)/ys(...)article(...)</code> - 米游社文章链接</li>
+</ul>
+</li>
+<li><strong>预估/盘点</strong>：
+<ul>
+<li><code>#?(原神|原|星铁|星|崩坏三|崩三|水晶|绝区(零|zzz|菲林)?(预估|盘点)</code> - 预估/盘点</li>
+</ul>
+</li>
+<li><strong>推送设置</strong>：
+<ul>
+<li><code>#*(星铁|原神|崩坏三|崩三|绝区零|崩坏二|崩二|崩坏学园二|未定|未定事件簿)?(开启|关闭)(公告|资讯)推送</code> - 公告/资讯推送开关</li>
+<li><code>#(星铁|原神)(开启|关闭)到期活动(预警)?(推送)?</code> - 到期活动预警推送开关</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="liangshi-calc"><a class="markdownIt-Anchor" href="#liangshi-calc"></a> liangshi-calc</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://gitee.com/liangshi233/liangshi-calc" title="liangshi-calc 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">liangshi-calc 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://gitee.com/liangshi233/liangshi-calc</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：为 miao-plugin 提供各种功能拓展，包括图鉴拓展、数据更新、分享面板、预设面板、自定义预设面板、智能组队计算等功能</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>需要安装 Miao-Plugin 才能使用</li>
+<li>首次使用前需手动为 miao-plugin 更新对应游戏必要资源</li>
+<li>不要设置为定时任务，不要没事就完整更新</li>
+<li>使用此功能更新后会导致 miao-plugin 后续更新出现冲突，可使用 #喵喵强制更新 消除冲突</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>：
+<ul>
+<li>Gitee：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/liangshi233/liangshi-calc.git ./plugins/liangshi-calc/</span><br></pre></td></tr></table></figure>
+</li>
+<li>GitHub：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/liangshi233/liangshi-calc.git ./plugins/liangshi-calc/</span><br></pre></td></tr></table></figure>
+</li>
+<li>文件代理加速（网络环境差时使用）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://git.119899.xyz/https://github.com/liangshi233/liangshi-calc.git ./plugins/liangshi-calc/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>重启 Bot 后即可启用插件</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>图鉴拓展</strong>：首次使用前需手动为 miao-plugin 更新对应游戏必要资源</li>
+<li><strong>数据更新</strong>：一键更新新版本内容、一键更新指定类型内容、更新指定角色/武器/装备/物品</li>
+<li><strong>分享面板</strong>：导出默认启用，导入需手动开启权限</li>
+<li><strong>预设面板</strong>：默认启用</li>
+<li><strong>自定义预设面板</strong></li>
+<li><strong>智能组队计算</strong>：开启组队计算或超全计算后启用</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>伤害计算</strong>：
+<ul>
+<li><code>#*(强制)?更新(...)(游戏名)(...)计算</code> - 更新游戏伤害计算</li>
+<li><code>#*重置(计算条目|条目|计算)(基础|极简|组队|队伍|空|空白)</code> - 重置计算</li>
+<li><code>#*(强制)?(添加|增加|删除|移除|查看)(游戏名)(...)(计算条目|条目|计算)(...)</code> - 管理计算条目</li>
+</ul>
+</li>
+<li><strong>数据更新</strong>：
+<ul>
+<li><code>#*(梁氏|liangshi)?检查(游戏名)更新</code> - 检查更新</li>
+<li><code>#*(梁氏|liangshi)?一键更新(游戏名)(最|当前最)?新版本(完整|全部)?(数据|资源|内容|资源数据)</code> - 一键更新新版本</li>
+<li><code>#*(梁氏|liangshi)?(强制|强行|覆盖)?更新(游戏名)(...)角色(数据|资源|资源数据)?</code> - 更新角色数据</li>
+<li><code>#*(梁氏|liangshi)?(强制|强行|覆盖)?更新(游戏名)(...)(圣遗物|声骸|遗器)(数据|资源|资源数据)?</code> - 更新圣遗物/声骸/遗器数据</li>
+<li><code>#*(梁氏|liangshi)?(强制|强行|覆盖)?更新(游戏名)(...)(武器|光锥)(数据|资源|资源数据)?</code> - 更新武器/光锥数据</li>
+<li><code>#*(梁氏|liangshi)?(强制|强行|覆盖)?更新(游戏名)(...)物品(数据|资源|资源数据)?</code> - 更新物品数据</li>
+<li><code>#*(梁氏|liangshi)?(查询|检查|查看)(游戏名)?(资源|数据)版本(更新记录|更新历史记录)?</code> - 查询数据版本</li>
+<li><code>#*(梁氏|liangshi)?(回退|回溯|撤回)(游戏名)?(...)(资源|数据)更新</code> - 回退数据更新</li>
+</ul>
+</li>
+<li><strong>角色信息</strong>：
+<ul>
+<li><code>#*(...)(收益曲线|角色介绍|介绍|角色海报|海报|角色封面|封面|侧头像|证件照|立绘|名片|普通攻击|元素战技|元素爆发|cv)(帮助)?</code> - 角色信息查询</li>
+</ul>
+</li>
+<li><strong>预设面板</strong>：
+<ul>
+<li><code>#?(梁氏|liangshi)?(刷新|重置|初始化|更新)预设面板</code> - 预设面板管理</li>
+</ul>
+</li>
+<li><strong>插件管理</strong>：
+<ul>
+<li><code>#*(伤害计算拓展|伤害计算|计算|梁氏|liangshi)(插件)?(反馈|错误|有问题|不对)</code> - 插件反馈</li>
+<li><code>#?(删除|重置|移除|清除|还原)(liangshi设置|Liangshi设置|梁氏设置)</code> - 重置设置</li>
+<li><code>#?梁氏([启动])?启动([启动])?</code> - 启动梁氏</li>
+</ul>
+</li>
+<li><strong>其他</strong>：
+<ul>
+<li><code>#?原神占用</code> - 原神占用</li>
+<li><code>#(原神)+(预下载|预下载占用|预下载空间占用|预下载储存占用)</code> - 原神预下载</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="logier-plugin"><a class="markdownIt-Anchor" href="#logier-plugin"></a> logier-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://gitee.com/logier/logier-plugin" title="logier-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">logier-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://gitee.com/logier/logier-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：云崽js插件合集，本仓库js插件已合并成鸢尾花插件</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>部分功能需要获取key（塔罗牌需要chatanywhere key，城市天气需要和风天气key）</li>
+<li>如果出现任何bug或者想要新功能，希望及时提交issue或者qq联系</li>
+</ul>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>表情包系列</strong>：表情包仓库、表情包小偷、保存表情包、戳一戳表情包</li>
+<li><strong>定时系列</strong>：定时发图、资讯推送（60s新闻、摸鱼日历、天气）</li>
+<li><strong>运势系列</strong>：今日运势、算一卦、塔罗牌、今日签到</li>
+<li><strong>小修系列</strong>：今日老婆、进退群通知</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#?(logier|鸢尾花|yuanweihua|iris|鸢尾|yuanwei)(帮助|help|指令|菜单|命令)</code> - 打开帮助菜单</li>
+<li><code>#?(鸢尾花)?(插件)?(强制)?更新</code> - 更新插件</li>
+<li><code>#?(鸢尾花)?(插件)?版本</code> - 查看插件版本</li>
+<li><code>#?(鸢尾花)?(插件)?更新日志</code> - 查看更新日志</li>
+</ul>
+</li>
+<li><strong>问候</strong>：
+<ul>
+<li><code>早上好|晚上好|早安|晚安|早|睡觉了|中午好|午安|上午好|下午好</code> - 问候</li>
+</ul>
+</li>
+<li><strong>表情包系列</strong>：
+<ul>
+<li><code>#?emojihub|#?表情包仓库|#?表情仓库</code> - 表情包仓库</li>
+<li><code>#?(阿夸|aqua)(表情仓库)?</code> - 阿夸表情包</li>
+<li><code>#?(阿尼亚)(表情仓库)?</code> - 阿尼亚表情包</li>
+<li><code>#?(白圣女|白圣)(表情仓库)?</code> - 白圣女表情包</li>
+<li><code>#?(柴郡|chaiq|柴郡猫)(表情仓库)?</code> - 柴郡表情包</li>
+<li><code>#?(甘城猫猫|nacho|Nacho)(表情仓库)?</code> - 甘城猫猫表情包</li>
+<li><code>#?(狗妈|nana|Nana|神乐七奈)(表情仓库)?</code> - 狗妈表情包</li>
+<li><code>#?(吉伊卡哇|chiikawa|Chiikawa|chikawa|Chikawa|乌萨奇)(表情仓库)?</code> - 吉伊卡哇表情包</li>
+<li><code>#?(龙图|long|Long|龙)(表情仓库)?</code> - 龙图</li>
+<li><code>#?(猫猫虫咖波|猫猫虫|capoo|Capoo|咖波)(表情仓库)?</code> - 咖波表情包</li>
+<li><code>#?(小黑子|坤图|ikun)(表情仓库)?</code> - 小黑子表情包</li>
+<li><code>#?(亚托莉|亚托利|atri|ATRI)(表情仓库)?</code> - 亚托莉表情包</li>
+<li><code>#?(真寻酱|绪山真寻|小真寻|真寻)(表情仓库)?</code> - 真寻表情包</li>
+<li><code>#?(七濑胡桃|胡桃酱|Menhera|menhera)(表情仓库)?</code> - 七濑胡桃表情包</li>
+<li><code>#?(小狐狸|兽耳酱|Kemomimi|kemomimi)(表情仓库)?</code> - 小狐狸表情包</li>
+<li><code>#?(喵内|喵内噶)(表情仓库)?</code> - 喵内表情包</li>
+<li><code>#?(波奇|孤独摇滚|bochi|Bochi|BOCHI)(表情仓库)?</code> - 波奇表情包</li>
+<li><code>#?(心海|珊瑚宫心海|小心海|心海酱)(表情仓库)?</code> - 心海表情包</li>
+<li><code>#?(时雨羽衣|羽衣|UI|羽衣妈妈)(表情仓库)?</code> - 时雨羽衣表情包</li>
+<li><code>#?(天宫心|阿喵酱)(表情仓库)?</code> - 天宫心表情包</li>
+<li><code>#?(3bk|3笨蛋|三笨蛋)(表情仓库)?</code> - 三笨蛋表情包</li>
+<li><code>#?(碧蓝档案|ba|BA)(表情仓库)?</code> - 碧蓝档案表情包</li>
+<li><code>#?(自定义表情包|我的表情包)</code> - 自定义表情包</li>
+<li><code>#?(图)(存表情)(图)?</code> - 保存表情</li>
+<li><code>#?(查看表情)(图)?(\d+)?</code> - 查看表情</li>
+<li><code>#?(删除表情)(图)?(\d+)</code> - 删除表情</li>
+<li><code>#?(图)(存涩图)?</code> - 保存涩图</li>
+<li><code>#?(查看涩图)(\d+)?</code> - 查看涩图</li>
+<li><code>#?(删除涩图)(\d+)</code> - 删除涩图</li>
+</ul>
+</li>
+<li><strong>定时系列</strong>：
+<ul>
+<li><code>#?(定时发图|发图)</code> - 定时发图</li>
+<li><code>#?鸢尾花(开启|关闭)(本群)?定时发图</code> - 定时发图开关</li>
+<li><code>#?(60s日报|真寻日报)</code> - 60s日报</li>
+<li><code>#?(60s日报|今日新闻)</code> - 今日新闻</li>
+<li><code>#?(摸鱼日历|摸鱼)</code> - 摸鱼日历</li>
+<li><code>#?(天气)\s...</code> - 城市天气（需要和风天气key）</li>
+</ul>
+</li>
+<li><strong>运势系列</strong>：
+<ul>
+<li><code>#?(今日运势|运势)</code> - 今日运势</li>
+<li><code>#?(悔签|重新抽取运势)</code> - 悔签</li>
+<li><code>#?(算一卦|算卦)...</code> - 算一卦</li>
+<li><code>#?(悔卦|逆天改命)...</code> - 悔卦</li>
+<li><code>#?(塔罗牌|塔罗)(...)</code> - 塔罗牌（需要chatanywhere key）</li>
+<li><code>#?(占卜)(...)</code> - 占卜（抽三张）</li>
+<li><code>#?(彩虹塔罗牌)(...)</code> - 彩虹塔罗牌</li>
+<li><code>#?(今日)?(签到|打卡)</code> - 今日签到</li>
+</ul>
+</li>
+<li><strong>小修系列</strong>：
+<ul>
+<li><code>(今日番剧|番剧)</code> - 今日番剧</li>
+<li><code>#?(今日cp|今日CP|cp生成|CP生成)</code> - 今日CP</li>
+<li><code>(#|/)?(今日老婆|marry)</code> - 今日老婆</li>
+<li><code>#?(三次元)</code> - 三次元</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mc-plugin"><a class="markdownIt-Anchor" href="#mc-plugin"></a> mc-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://github.com/CikeyQi/mc-plugin" title="mc-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">mc-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://github.com/CikeyQi/mc-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：基于 Yunzai 的 Minecraft Server 消息互通插件，移植于 17TheWord 大佬的 nonebot-plugin-mcqq</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>需要机器人所在服务器和 Minecraft 服务器任意一个可以被另一个访问（在同一内网或至少其中一个有公网）</li>
+<li>支持 Spigot 端、Velocity 端、Fabric 端、Forge 端、NeoForge 端</li>
+<li>使用中遇到问题请加 QQ 群咨询：707331865</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>克隆仓库</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/CikeyQi/mc-plugin.git ./plugins/mc-plugin</span><br></pre></td></tr></table></figure>
+</li>
+<li><strong>安装依赖</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm install --filter=mc-plugin</span><br></pre></td></tr></table></figure>
+</li>
+<li><strong>配置插件</strong>：请查看 Wiki 文档进行配置</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li>玩家加入/离开服务器消息</li>
+<li>玩家聊天信息发送到群内</li>
+<li>玩家死亡信息</li>
+<li>群内使用指令</li>
+<li>群员聊天文本发送到服务器</li>
+<li>特殊消息支持</li>
+<li>多服务器连接</li>
+<li>断线自动重连</li>
+<li>正向/反向 WebSocket 连接</li>
+<li>使用 @kitUIN/ChatImage 在游戏内显示图片</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#?mc帮助</code> - 打开帮助菜单</li>
+<li><code>#mc((插件)?(强制)?更新| update)</code> - 更新插件</li>
+</ul>
+</li>
+<li><strong>服务器管理</strong>：
+<ul>
+<li><code>#?mcsa</code> - 服务器A相关</li>
+<li><code>#?mcst</code> - 服务器T相关</li>
+<li><code>#?mc(开启|关闭)同步...</code> - 同步开关</li>
+<li><code>#?mc重连</code> - 重连服务器</li>
+<li><code>#?mc状态</code> - 查看服务器状态</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="memz-plugin"><a class="markdownIt-Anchor" href="#memz-plugin"></a> memz-plugin</h3>
+<ul>
+<li><strong>命令列表</strong>：
+<ul>
+<li><code>^#(http|ping|tcping)\s*(\S+)$</code></li>
+<li><code>/^#?(memz)(帮助|help|菜单|幫助|菜單)(列表|list)?$/i</code></li>
+<li><code>/^#?(memz)(全部|all)(帮助|help|菜单|幫助|菜單)(列表|list)?$/i</code></li>
+<li><code>/^#?(memz)(web|网络)?(工具|tool)(s)?(帮助|help|菜单|幫助|菜單)(列表|list)?$/i</code></li>
+<li><code>/^#?(memz)(群|群聊|Group)(帮助|help|菜单|幫助|菜單)(列表|list)?$/i</code></li>
+<li><code>/^#?(memz)(ic)?(qq)(帮助|help|菜单|幫助|菜單)(列表|list)?$/i</code></li>
+<li><code>/^#?(memz)(搜索|搜索功能)(帮助|help|菜单|幫助|菜單)(列表|list)?$/i</code></li>
+<li><code>/^#?(memz)(系统|system|管理|admin)(帮助|功能|功能|help)(列表|list)?$/i</code></li>
+<li><code>undefined</code></li>
+<li><code>^#?资(源)?(资源|游戏)\s*(.*)$</code></li>
+<li><code>^#?清理(资)?(资源|游戏)缓存$</code></li>
+<li><code>^#?资源(分类|类别)?(统计|数量|总数|总计)$</code></li>
+<li><code>^#?磁力搜索\s*(.+)</code></li>
+<li><code>^#?资(源)?影视\s*(\S+)$</code></li>
+<li><code>/^#?(网站|web)?服务状态/i</code></li>
+<li><code>/^#(?:memz)?(?:插件)?系统状态(:pro(max)?)?$/i</code></li>
+<li><code>/^#?redis(状态|统计|狀態|統計)(\s*pro)?/i</code></li>
+<li><code>/^#*redis(一键)?(清理|释放|归零|清空)(db(\d+))?$/i</code></li>
+<li><code>/^#?(memz)(插件)?检查(仓库)?更新$/i</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="mora-plugin"><a class="markdownIt-Anchor" href="#mora-plugin"></a> mora-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://gitee.com/Rrrrrrray/mora-plugin" title="mora-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">mora-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://gitee.com/Rrrrrrray/mora-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：Mora-Plugin 是一个 Yunzai-Bot 的插件，仅用于自我学习其他优秀插件，但里面大概都是写不实用的功能（想到啥写啥）</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>此插件合并进插件库前（以该库首页 README 为准），要是写进一键脚本等大范围传播需要提前告知</li>
+<li>功能仅限内部交流与小范围使用，请勿将 Yunzai-Bot 及 Mora-Plugin 用于任何以盈利为目的的场景</li>
+<li>图片与其他素材均来自于网络，仅供交流学习使用，如有侵权请联系，会立即删除</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/Rrrrrrray/mora-plugin.git ./plugins/mora-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+<li>如果是手工下载的 zip 压缩包，请将解压后的 mora-plugin 文件夹（请删除压缩自带的 -master 后缀）放置在 Yunzai 目录下的 plugins 文件夹内</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>原神冒险团</strong>：角色配队一图流、角色参考面板&amp;收益曲线</li>
+<li><strong>虚空数据库</strong>：深渊使用率、深渊热门队伍、深渊天梯榜、深渊队伍系统</li>
+<li><strong>摩拉功能</strong>：角色攻略、复刻表、某一个UP卡池详情、各版本深渊原魔血量最低输出量、当期深渊阵容参考、全局表情功能限制、面包店小游戏</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#?摩拉帮助</code> - 打开帮助菜单</li>
+<li><code>#摩拉(强制)?更新</code> - 更新插件</li>
+<li><code>#(强制)?更新摩拉资源</code> - 更新摩拉资源</li>
+</ul>
+</li>
+<li><strong>虚空数据库</strong>：
+<ul>
+<li><code>#?(原神|星铁)?[1-9].\d(深渊|混沌)</code> - 查看版本深渊/混沌</li>
+<li><code>#?历代12(层|-[1-3])?(最低输出量)?</code> - 历代12层最低输出量</li>
+<li><code>#?[1-9].\d(深渊)?阵容(参考|推荐)?</code> - 版本深渊阵容参考</li>
+<li><code>#?虚空(深渊)?(五星|四星)?使用率</code> - 虚空深渊使用率</li>
+<li><code>#?虚空(深渊)?(上半|下半)?队伍(出战数|满星数)?([1-7])?</code> - 虚空深渊队伍数据</li>
+<li><code>#?虚空深渊帮助</code> - 虚空深渊帮助</li>
+</ul>
+</li>
+<li><strong>复刻表/卡池</strong>：
+<ul>
+<li><code>#?(原神|星铁)?(角色|武器|光锥)?复刻表</code> - 复刻表</li>
+<li><code>#(原神|星铁|绝区零)?\S+(复刻|卡池)</code> - 查看卡池/复刻</li>
+</ul>
+</li>
+<li><strong>全局功能</strong>：
+<ul>
+<li><code>#(全局)?(添加|删除)(...)</code> - 全局添加/删除</li>
+<li><code>#(全局)?(表情|词条)(...)</code> - 全局表情/词条</li>
+</ul>
+</li>
+<li><strong>原神冒险团</strong>：
+<ul>
+<li><code>#\S+配队</code> - 角色配队</li>
+<li><code>#?(星铁|绝区零)?(更新)?\S+(攻略|一图流)</code> - 角色攻略/一图流</li>
+<li><code>#?(星铁)?\S+(参考面板|收益曲线|进阶(攻略|参考))</code> - 参考面板/收益曲线</li>
+<li><code>#?收益曲线帮助</code> - 收益曲线帮助</li>
+<li><code>#?(星铁)?参考面板帮助</code> - 参考面板帮助</li>
+</ul>
+</li>
+<li><strong>面包店小游戏</strong>：
+<ul>
+<li><code>#\S+(面包|牛油包)(帮助|记录|排行)?</code> - 面包店相关</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="nai-plugin"><a class="markdownIt-Anchor" href="#nai-plugin"></a> nai-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://github.com/CikeyQi/nai-plugin" title="nai-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">nai-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://github.com/CikeyQi/nai-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：基于 Yunzai 的 AI 绘图插件，使用 NovelAI 接口，让你在输入框中拥有便捷的 AI 绘画体验</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>使用强大的 NovelAI 作为后端，付费使用，生成的质量高，能够模仿指定画师画风生成图片</li>
+<li>使用中遇到问题请加 QQ 群咨询：707331865</li>
+<li>百度翻译请自行前往翻译开放平台获取 APP ID 和密钥</li>
+<li>腾讯云审核配置请参考 Yumi 文档</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>克隆仓库</strong>：
+<ul>
+<li>GitHub：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/CikeyQi/nai-plugin.git ./plugins/nai-plugin</span><br></pre></td></tr></table></figure>
+</li>
+<li>GitHub Proxy（网络环境差时使用）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://mirror.ghproxy.com/https://github.com/CikeyQi/nai-plugin.git ./plugins/nai-plugin</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><strong>安装依赖</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm install --filter=nai-plugin</span><br></pre></td></tr></table></figure>
+</li>
+<li><strong>配置插件</strong>：需要获取 NovelAI Token 并进行相关配置</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li>基本生成图片</li>
+<li>绑定画风</li>
+<li>查找历史图片</li>
+<li>图片超分</li>
+<li>查询账户余额</li>
+<li>队列轮询账号</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>/nai --help</code> - 打开帮助菜单</li>
+<li><code>/nai --update</code> - 更新插件</li>
+<li><code>/nai --info</code> - 查看插件信息</li>
+<li><code>/nai --reload</code> - 重新加载插件</li>
+</ul>
+</li>
+<li><strong>AI 绘图</strong>：
+<ul>
+<li><code>/image(...)</code> - 生成图片</li>
+<li><code>/draw(...)</code> - 绘制图片</li>
+<li><code>/re</code> - 重新生成</li>
+<li><code>/nai --find (\d+)</code> - 查找历史图片</li>
+</ul>
+</li>
+<li><strong>预设管理</strong>：
+<ul>
+<li><code>/pset(?: --(add|find|del))?(?:\s+([\s\S]*))?</code> - 预设管理（添加、查找、删除）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="phi-plugin"><a class="markdownIt-Anchor" href="#phi-plugin"></a> phi-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://github.com/Catrong/phi-plugin" title="phi-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">phi-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://github.com/Catrong/phi-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：适用于 Yunzai-Bot V3 的 Phigros 信息查询插件，支持查询分数等信息统计，以及猜曲目等小游戏</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>请使用主人权限执行 <code>/phi downill</code> 下载曲绘，否则相关曲绘将无法正常展示</li>
+<li>具体功能可在安装插件后通过 <code>/phi help</code> 查看详细指令</li>
+<li>有相关的建议和问题可以在 Issues 中提出，欢迎 PR</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>（两种方法二选一）：
+<ul>
+<li>GitHub：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/Catrong/phi-plugin.git ./plugins/phi-plugin/</span><br><span class="line"><span class="built_in">cd</span> ./plugins/phi-plugin/</span><br><span class="line">pnpm install -P</span><br></pre></td></tr></table></figure>
+</li>
+<li>Gitee镜像：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/catrong/phi-plugin.git ./plugins/phi-plugin/</span><br><span class="line"><span class="built_in">cd</span> ./plugins/phi-plugin/</span><br><span class="line">pnpm install -P</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>**如果安装依赖时速度过慢，运行：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>用户功能</strong>：绑定 sessionToken、查询 rks/b30、查询个人统计、猜曲绘、开字母、提示猜曲、查询曲目、查询谱面、评论曲目、签到获取 Notes、查看任务等</li>
+<li><strong>管理功能</strong>：备份存档、还原备份、设置别名等</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>/(pgr|PGR|屁股肉|phi|Phi)(命令|帮助|菜单|help|说明|功能|指令|使用说明)</code> - 打开帮助菜单</li>
+<li><code>/(pgr|PGR|屁股肉|phi|Phi)to?k(en)?(命令|帮助|菜单|help|说明|功能|指令|使用说明)</code> - Token 帮助</li>
+<li><code>/(pgr|PGR|屁股肉|phi|Phi)api(命令|帮助|菜单|help|说明|功能|指令|使用说明)</code> - API 帮助</li>
+<li><code>/(pgr|PGR|屁股肉|phi|Phi)(设置|set)...</code> - 设置相关</li>
+<li><code>/(pgr|PGR|屁股肉|phi|Phi)(强制|qz)?(更新|gx)</code> - 更新插件</li>
+<li><code>/(pgr|PGR|屁股肉|phi|Phi)(下载|更新|gx|down|up)s*(曲绘|ill)</code> - 下载曲绘</li>
+</ul>
+</li>
+<li><strong>账号绑定</strong>：
+<ul>
+<li><code>/phi setApiToken...</code> - 设置 API Token</li>
+<li><code>/phi (tkls|lstk)</code> - Token 列表</li>
+<li><code>/phi (token|tk)(Manage|mng|manage)...</code> - Token 管理</li>
+<li><code>/phi auth...</code> - 认证相关</li>
+<li><code>/phi clearApiData</code> - 清除 API 数据</li>
+<li><code>/phi updateHistory</code> - 更新历史</li>
+<li><code>/phi updateUserToken</code> - 更新用户 Token</li>
+<li><code>/phi updateComment</code> - 更新评论</li>
+<li><code>/phi (NOAPI|noapi)</code> - 无 API 模式</li>
+<li><code>/phi (绑定|bind)...</code> - 绑定 sessionToken</li>
+<li><code>/phi (解绑|unbind)</code> - 解绑</li>
+<li><code>/phi (更新存档|update)</code> - 更新存档</li>
+<li><code>/phi clean</code> - 清除所有记录</li>
+<li><code>/phi sessionToken</code> - sessionToken 相关</li>
+<li><code>/phi data</code> - 获取用户 data 数量</li>
+</ul>
+</li>
+<li><strong>分数查询</strong>：
+<ul>
+<li><code>/phi (b[0-9]+|rks|pgr|PGR|B[0-9]+|RKS)...</code> - 查询 rks/b30</li>
+<li><code>/phi (p|P)[0-9]+...</code> - 查询 bX</li>
+<li><code>杠刚钢纲phi a(arc)啊阿批屁劈 (b|B)[0-9]+|[比必币]([0-9]+|三零)</code> - 杠批比三零</li>
+<li><code>/phi lmtacc...</code> - 计算限制最低 ACC 后的 RKS</li>
+<li><code>/phi best[1-9]?[0-9]?</code> - 查询文字版 b30（或更多）</li>
+<li><code>/phi (score|单曲成绩)[1-2]?...</code> - 获取单曲成绩</li>
+<li><code>/phi (suggest|推分(建议)?)...</code> - 获取推分建议</li>
+<li><code>/phi chap...</code> - 获取章节成绩</li>
+<li><code>/phi (Dan|dan) update</code> - 更新定数</li>
+<li><code>/phi (Dan|dan)...</code> - 定数相关</li>
+<li><code>/phi info[1-2]?...</code> - 查询个人统计信息</li>
+<li><code>/phi ((lvsco(re)?)|scolv)...</code> - 获取区间成绩</li>
+<li><code>/phi list...</code> - 获取区间每首曲目的成绩</li>
+<li><code>/phi (排行榜|ranklist)...</code> - 获取 RKS 排行榜</li>
+<li><code>/phi (查询排名|rankfind)...</code> - 查询排名</li>
+<li><code>/phi (table|定数表)[0-9]+</code> - 查询定数表</li>
+</ul>
+</li>
+<li><strong>小游戏</strong>：
+<ul>
+<li><code>/phi (提示猜曲|tipgame|ltr|letter|开字母|guess|猜曲名)</code> - 猜曲小游戏</li>
+<li><code>/出|开|翻|揭|看|翻开|打开|揭开|open [字母]</code> - 开字母</li>
+<li><code>/phi (tip|提示)</code> - 获取提示</li>
+<li><code>/phi (ans|答案|结束)</code> - 获取答案/结束</li>
+</ul>
+</li>
+<li><strong>曲目查询</strong>：
+<ul>
+<li><code>/phi (曲|song)...</code> - 查询曲目</li>
+<li><code>/phi (查找|检索|search)...</code> - 检索曲库</li>
+<li><code>/phi (曲绘|ill|Ill)...</code> - 查询曲绘</li>
+<li><code>/phi alias...</code> - 查询别名</li>
+<li><code>/phi (com|计算)...</code> - 计算相关</li>
+<li><code>/phi tips</code> - 随机 tips</li>
+<li><code>/phi new</code> - 查询更新的曲目</li>
+<li><code>/phi live</code> - 直播相关</li>
+<li><code>/phi chart...</code> - 查询谱面</li>
+<li><code>/phi (addtag|subtag|retag)...</code> - 标签管理</li>
+</ul>
+</li>
+<li><strong>评论功能</strong>：
+<ul>
+<li><code>/phi (comment|cmt|评论|评价)...</code> - 评论曲目</li>
+<li><code>/phi recmt...</code> - 查看并确认是否删评</li>
+<li><code>/phi mycmt...</code> - 查看自己的云端评论</li>
+</ul>
+</li>
+<li><strong>Notes 系统</strong>：
+<ul>
+<li><code>/phi (sign|sign in|签到|打卡)</code> - 签到获取 Notes</li>
+<li><code>/phi (task|我的任务)</code> - 查看自己的任务</li>
+<li><code>/phi (retask|刷新任务)</code> - 刷新任务（花费 20 Notes）</li>
+<li><code>/phi (send|送|发)...</code> - 送给目标 Note</li>
+</ul>
+</li>
+<li><strong>其他功能</strong>：
+<ul>
+<li><code>/phi (jrrp|今日人品)</code> - 今日人品</li>
+<li><code>/phi repu</code> - 声望相关</li>
+<li><code>/phi theme [0-2]</code> - 切换绘图主题</li>
+<li><code>/phi (随机|rand(om)?)...</code> - 随机曲目</li>
+<li><code>/phi randclg...</code> - 随机课题</li>
+<li><code>/phi (设置别名|setnic(k?))...</code> - 设置别名</li>
+<li><code>/phi (删除别名|delnic(k?))...</code> - 删除别名</li>
+</ul>
+</li>
+<li><strong>管理功能</strong>：
+<ul>
+<li><code>/phi backup( back)?</code> - 备份存档文件</li>
+<li><code>/phi restore</code> - 从备份中还原</li>
+<li><code>/phi get ...</code> - 获取</li>
+<li><code>/phi del ...</code> - 删除</li>
+<li><code>/phi allow ...</code> - 允许</li>
+<li><code>/phi ban ...</code> - 封禁</li>
+<li><code>/phi unban ...</code> - 解封</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="rconsole-plugin"><a class="markdownIt-Anchor" href="#rconsole-plugin"></a> rconsole-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://github.com/zhiyu1998/rconsole-plugin" title="rconsole-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">rconsole-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://github.com/zhiyu1998/rconsole-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：专门为朋友们写的 Yunzai-Bot 插件，专注图片视频分享、生活、健康和学习的插件</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>要使用视频解析功能要下载 FFmpeg</li>
+<li>素材来源于网络，仅供交流学习使用</li>
+<li>严禁用于任何商业用途和非法行为</li>
+<li>相关问题可以进 R插件交流群：575663150</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>（两种方法二选一）：
+<ul>
+<li>国内（Gitee）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitee.com/kyrzy0416/rconsole-plugin.git ./plugins/rconsole-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+<li>海外（GitHub）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zhiyu1998/rconsole-plugin.git ./plugins/rconsole-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><strong>安装依赖</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm i --filter=rconsole-plugin</span><br></pre></td></tr></table></figure>
+</li>
+<li><strong>（可选）安装 FFmpeg 用于视频解析</strong>：
+<ul>
+<li>Ubuntu：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get install ffmpeg</span><br></pre></td></tr></table></figure>
+</li>
+<li>Windows：参考 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5015a477de3c">https://www.jianshu.com/p/5015a477de3c</a></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>主要特征</strong>：
+<ul>
+<li>开箱即用，git 到 Yunzai 就可以使用</li>
+<li>速度巨快，考虑单线程、多线程，用户可以联合 BBDown、Aria2</li>
+<li>多方面考虑，低画质看内容、高画质看品质都考虑</li>
+<li>健壮性高，开源时间长，信任用户多，bug 及时解决，程序运行稳定</li>
+<li>健全文档，文档注释丰富，方便调试和开发</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#*R(插件)?版本</code> - 查看插件版本</li>
+<li><code>#*R(插件)?(强制更新|更新)</code> - 更新插件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="san-plugin"><a class="markdownIt-Anchor" href="#san-plugin"></a> San-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://gitee.com/San-luo/San-plugin" title="San-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">San-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://gitee.com/San-luo/San-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：拓展了云崽原有的表情添加功能，以及一些小功能，业余时间学习编写，随缘更新</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>该仓库未声明开源许可证文件（LICENSE），使用请关注具体项目描述及其代码上游依赖</li>
+<li>San-plugin 已适配锅巴插件，相关配置可上锅巴进行更改</li>
+<li>有插件问题或有新功能建议可以联系作者 QQ：3126986875</li>
+<li>作者的 Bot 群：518062670</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitee.com/San-luo/San-plugin.git ./plugins/San-plugin</span><br></pre></td></tr></table></figure>
+</li>
+<li><strong>安装依赖</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm install --filter=san-plugin</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>表情添加功能</strong>：添加随机关键词回复、连续添加、随机回复表情、表情列表等</li>
+<li><strong>气象信息</strong>：获取天气卡片、极端天气、空气质量卡片、空气质量排行</li>
+<li><strong>戳一戳</strong>：添加戳一戳 api、开启/关闭戳一戳、管理戳一戳 api</li>
+<li><strong>其他小功能</strong>：去背景、留言</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#san帮助</code> - 查看帮助图</li>
+<li><code>#?(san|San|三)(强制)?更新</code> - 更新插件</li>
+<li><code>#?(san|San|三)(插件)?更新日志</code> - 查看更新日志</li>
+</ul>
+</li>
+<li><strong>表情添加功能</strong>：
+<ul>
+<li><code>#san设置表情添加开启(关闭)</code> - 开启(关闭)表情添加功能，重启生效</li>
+<li><code>#添加xxx</code> - 添加随机关键词回复</li>
+<li><code>#san设置表情添加仅主人开启(关闭)</code> - 开启后仅有主人可添加表情</li>
+<li><code>#表情删除全部项xxx</code> - 删除指定关键词对应的全部表情，仅主人可用</li>
+<li><code>#表情删除</code> - 需引用 bot 所发表情，删除对应单项表情</li>
+<li><code>#连续添加xxx</code> - 连续添加随机关键词回复，结束请发 #结束添加</li>
+<li><code>#来点xxx</code> - 随机回复 10 张此关键词表情</li>
+<li><code>#表情列表</code> - 查看添加的所有表情及数量</li>
+</ul>
+</li>
+<li><strong>气象信息</strong>：
+<ul>
+<li><code>xxx天气</code> - 获取天气卡片，支持模糊关键词</li>
+<li><code>极端天气</code> - 查看当前极端天气地区</li>
+<li><code>xxx空气</code> - 获取空气质量卡片，支持模糊关键词</li>
+<li><code>xxx空气排行</code> - 可查看此地区的空气质量排行</li>
+</ul>
+</li>
+<li><strong>戳一戳</strong>：
+<ul>
+<li><code>#san设置戳一戳仅bot(开启/关闭)</code> - 开启后仅有戳 bot 才可触发戳一戳</li>
+<li><code>#戳一戳(开启/关闭/全部)列表</code> - 查看(开启/关闭/全部)的 api 列表</li>
+<li><code>#戳一戳设置名称 api</code> - 添加戳一戳 api，添加默认开启（注意存在空格）</li>
+<li><code>#戳一戳全部(开启/关闭)</code> - (开启/关闭)全部戳一戳 api</li>
+<li><code>#戳一戳(开启/关闭)名称</code> - 开启/关闭指定 api</li>
+<li><code>#戳一戳全部删除</code> - 删除全部 api（慎重使用）</li>
+<li><code>#戳一戳删除xxx</code> - 删除指定 api</li>
+</ul>
+</li>
+<li><strong>其他小功能</strong>：
+<ul>
+<li><code>#去背景</code> - 获取去除背景后的图像，可引用消息</li>
+<li><code>#留言</code> - 可向 bot 主人留言</li>
+<li><code>取</code> - 需引用消息，发送引用消息的 e 实例</li>
+</ul>
+</li>
+<li><strong>其他设置类</strong>：
+<ul>
+<li><code>#san设置</code> - 查看 San 插件的设置信息</li>
+<li><code>#san设置图像质量100</code> - 设置图像生成质量，范围为 1-100</li>
+</ul>
+</li>
+<li><strong>其他</strong>：
+<ul>
+<li><code>#(.*)提醒(.*)</code> - 提醒</li>
+<li><code>^(.*)$</code> - 其他命令</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="starrail-plugin"><a class="markdownIt-Anchor" href="#starrail-plugin"></a> StarRail-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://gitee.com/hewang1an/StarRail-plugin" title="StarRail-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">StarRail-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://gitee.com/hewang1an/StarRail-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：适用于 Yunzai-Bot 的星穹铁道插件，为查询崩坏：星穹铁道基本信息的插件，包括角色面板、体力以及米游社所拥有的的一切有关星轨的功能</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>插件主要开发者即将高考、考研、以及正在读博，所以将不会花太多时间在插件身上</li>
+<li>星铁插件可能会多出一些小功能，但如果您觉得麻烦，推荐使用 Miao-plugin，二者相对于用户来说没有太大区别</li>
+<li>有相关的建议和问题可以在 issues 中提出，欢迎 PR</li>
+<li>插件交流群(QQ)：758447726</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>（两种方法二选一，推荐 git 安装）：
+<ul>
+<li>Gitee：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/hewang1an/StarRail-plugin.git ./plugins/StarRail-plugin</span><br></pre></td></tr></table></figure>
+</li>
+<li>GitHub：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/TsukinaKasumi/StarRail-plugin.git ./plugins/StarRail-plugin</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>安装完成后，发送 <code>#星铁更新</code> 即可更新 StarRail-plugin</li>
+<li><strong>手动下载安装（不推荐）</strong>：手工下载的 zip 压缩包，先将解压后的 StarRail-plugin-master 文件夹更名为 StarRail-plugin 放置在 Yunzai-Bot 目录下的 plugins 文件夹内（因为压缩包不支持用 <code>#星铁更新</code> 进行更新，不方便后续更新升级，所以不推荐下载压缩包）</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li>支持米游社相关的基本功能</li>
+<li>角色面板</li>
+<li>体力查询</li>
+<li>深渊查询（简、混沌回忆、虚构叙事、末日幻影、异相仲裁）</li>
+<li>星琼获取</li>
+<li>模拟宇宙</li>
+<li>寰宇蝗灾</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#星铁帮助</code> - 查看详细指令</li>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)(插件)?(强制)?更新</code> - 更新插件</li>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)(强制)?(更新图像|图像更新)(github|gitee)?</code> - 更新图像</li>
+</ul>
+</li>
+<li><strong>深渊查询</strong>：
+<ul>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)(上期|本期)?(简|简)(深渊)</code> - 深渊查询</li>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)(最新|当期)(简|简)(深渊)</code> - 当期深渊查询</li>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)(上期|本期)?(简|简)(忘却|忘却之庭|混沌|混沌回忆)</code> - 混沌回忆</li>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)(上期|本期)?(简|简)(虚构|虚构叙事)</code> - 虚构叙事</li>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)(上期|本期)?(简|简)(末日|末日幻影)</code> - 末日幻影</li>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)(上期|本期)?(简|简)(异乡|异相|异向|仲裁|异相仲裁)</code> - 异相仲裁</li>
+</ul>
+</li>
+<li><strong>其他查询</strong>：
+<ul>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)(星琼获取|月历|月收入|收入|原石)</code> - 星琼获取</li>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)体力</code> - 体力查询</li>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)(上期|本期)?(模拟)?宇宙</code> - 模拟宇宙</li>
+<li><code>#(星铁|星轨|崩铁|星穹铁道|铁道|sr)(寰宇)?蝗灾</code> - 寰宇蝗灾</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="system"><a class="markdownIt-Anchor" href="#system"></a> system</h3>
+<ul>
+<li><strong>命令列表</strong>：
+<ul>
+<li><code>^#(状态|统计)</code></li>
+<li><code>^#(全局)?添加</code></li>
+<li><code>^#(全局)?删除</code></li>
+<li><code>^#(全局)?(消息|词条)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="trss-plugin"><a class="markdownIt-Anchor" href="#trss-plugin"></a> TRSS-Plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://gitee.com/TimeRainStarSky/TRSS-Plugin" title="TRSS-Plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">TRSS-Plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://gitee.com/TimeRainStarSky/TRSS-Plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：TRSS Yunzai Plugin 云崽机器人插件</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>该仓库未声明开源许可证文件（LICENSE），使用请关注具体项目描述及其代码上游依赖</li>
+<li>推荐使用 TRSS Yunzai 管理脚本安装</li>
+<li>QQ 群组：659945190、1027131254、300714227</li>
+<li>联系方式：时雨 🌌 星空（QQ：2536554304）</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth 1 https://Yunzai.TRSS.me plugins/TRSS-Plugin</span><br><span class="line">pnpm i</span><br></pre></td></tr></table></figure>
+</li>
+<li><strong>（可选）安装图片修复、图片背景去除、语音合成</strong>：
+<ul>
+<li>需要安装 Python 3.10-3.11 和 Poetry</li>
+<li>在插件目录执行：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poetry install</span><br></pre></td></tr></table></figure>
+</li>
+<li>图片修复：需要克隆 Real-ESRGAN</li>
+<li>图片背景去除：需要克隆 RemBG 并下载模型</li>
+<li>语音合成：需要克隆 ChatWaifu 和 GenshinVoice 并下载模型</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>图片处理</strong>：图片修复、图片背景去除</li>
+<li><strong>语音合成</strong>：角色语音合成（汉语、日语、原神模型）</li>
+<li><strong>系统信息</strong>：系统信息、系统信息图片、系统测试</li>
+<li><strong>二维码生成</strong>：二维码 + 文字</li>
+<li><strong>米哈游登录</strong>：二维码登录、账号密码登录</li>
+<li><strong>Markdown</strong>（主人权限）：md + 文件/URL</li>
+<li><strong>代码高亮</strong>（主人权限）：sc + 文件/URL</li>
+<li><strong>远程命令</strong>（主人权限）：rc + Shell 命令、rj + JavaScript 命令</li>
+<li><strong>文件操作</strong>（主人权限）：文件查看、文件上传、文件下载</li>
+<li><strong>阿里云盘</strong>（主人权限）：上传、下载、相簿、链接、查看、创建目录、移动、回收站、重命名、删除、分享、同步备份、树形图、在线网盘、切换网盘、登录账号、账号列表、退出账号、空间配额、切换账号、当前账号</li>
+<li><strong>百度网盘</strong>（主人权限）：帮助、上传、下载、复制、链接、查看、元信息、创建目录、移动、离线下载、空间配额、回收站、删除、搜索、分享、转存、树形图、登录账号、账号列表、退出账号、切换账号、当前账号</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>图片处理</strong>：
+<ul>
+<li><code>#?(动漫)?图片修复</code> - 图片修复/动漫图片修复 + 图片</li>
+<li><code>#?(动漫)?(图片)?(去除?背景|背景去除?)</code> - 图片背景去除/动漫图片背景去除 + 图片</li>
+</ul>
+</li>
+<li><strong>语音合成</strong>：
+<ul>
+<li><code>角色名+说+中文</code> - 语音合成</li>
+</ul>
+</li>
+<li><strong>系统信息</strong>：
+<ul>
+<li><code>系统信息</code> / <code>系统信息图片</code> / <code>系统测试</code> - 系统信息</li>
+</ul>
+</li>
+<li><strong>二维码生成</strong>：
+<ul>
+<li><code>二维码+文字</code> - 二维码生成</li>
+</ul>
+</li>
+<li><strong>米哈游登录</strong>：
+<ul>
+<li><code>米哈游登录</code> - 二维码登录</li>
+<li><code>米哈游登录+账号</code> - 账号密码登录</li>
+<li><code>#?(扫码|二维码|辅助)(登录|绑定|登陆)[0-9]*</code> - 登录相关</li>
+<li><code>#?(体力|(c|C)(oo)?k(ie)?|(s|S)(to)?k(en)?)(帮助|教程)</code> - 帮助/教程</li>
+</ul>
+</li>
+<li><strong>Markdown</strong>（主人权限）：
+<ul>
+<li><code>md.+</code> - Markdown 文件/URL</li>
+</ul>
+</li>
+<li><strong>远程命令</strong>（主人权限）：
+<ul>
+<li><code>rc.+</code> - Shell 命令</li>
+<li><code>rj.+</code> - JavaScript 命令</li>
+<li><code>rcp.+</code> - Shell 命令（图片显示）</li>
+<li><code>rjp.+</code> - JavaScript 命令（图片显示）</li>
+</ul>
+</li>
+<li><strong>文件操作</strong>（主人权限）：
+<ul>
+<li><code>文件查看</code> / <code>文件上传</code> / <code>文件下载</code> + 路径 - 文件操作</li>
+</ul>
+</li>
+<li><strong>阿里云盘</strong>（主人权限）：
+<ul>
+<li><code>阿里云盘</code> - 阿里云盘</li>
+<li><code>阿里云盘上传</code> - 阿里云盘上传</li>
+<li><code>阿里云盘下载</code> - 阿里云盘下载</li>
+</ul>
+</li>
+<li><strong>百度网盘</strong>（主人权限）：
+<ul>
+<li><code>百度网盘</code> - 百度网盘</li>
+<li><code>百度网盘上传</code> - 百度网盘上传</li>
+<li><code>百度网盘下载</code> - 百度网盘下载</li>
+</ul>
+</li>
+<li><code>^dm.+</code></li>
+<li><code>^mm.+</code></li>
+<li><code>^fm.+</code></li>
+<li><code>^#?系统信息$</code></li>
+<li><code>^#?系统信息图片$</code></li>
+<li><code>^#?系统测试$</code></li>
+<li><code>.+?+</code></li>
+<li><code>#?语音(合成)?(角色)?列表$</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="waves-plugin"><a class="markdownIt-Anchor" href="#waves-plugin"></a> waves-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://github.com/erzaozi/waves-plugin" title="waves-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">waves-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://github.com/erzaozi/waves-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：一个适用于 Yunzai 系列机器人框架的鸣潮游戏数据查询插件，支持手机验证码登录或 Token 登录，支持查询玩家、日常、数据坞、抽卡等游戏数据</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>使用中遇到问题请加 QQ 群咨询：707331865</li>
+<li>非常不建议手动修改配置文件，本插件已兼容 Guoba-plugin，请使用锅巴插件对配置项进行修改</li>
+<li>部署本地化登录需要公网 IP 或可用的公网端口，也可使用 Cloudflare Tunnel 实现</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>克隆仓库</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/erzaozi/waves-plugin.git ./plugins/waves-plugin</span><br></pre></td></tr></table></figure>
+</li>
+<li><strong>安装依赖</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm install --filter=waves-plugin</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li>手机验证码登录或 Token 登录</li>
+<li>查询玩家信息</li>
+<li>查询日常数据</li>
+<li>查询数据坞/声骸</li>
+<li>查询抽卡记录/统计/分析</li>
+<li>查询挑战数据/全息战略</li>
+<li>查询角色面板</li>
+<li>查询探索度/地图</li>
+<li>查询当前卡池</li>
+<li>查询日历</li>
+<li>导入/导出抽卡记录</li>
+<li>查询图鉴</li>
+<li>上传面板图</li>
+<li>表情图</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>(～|~|鸣潮)(帮助|菜单|功能)</code> - 获取帮助</li>
+<li><code>(～|~|鸣潮)(登录|登陆)帮助</code> - 登录帮助</li>
+</ul>
+</li>
+<li><strong>登录相关</strong>：
+<ul>
+<li><code>(～|~|鸣潮)绑定(.*)</code> - 绑定</li>
+<li><code>(～|~|鸣潮)(登录|登陆)(.*)</code> - 登录</li>
+<li><code>(～|~|鸣潮)(删除登录|解除登录|解绑)(.*)</code> - 解绑</li>
+<li><code>(～|~|鸣潮)(我的|库街区)?[Tt]o?k(en)?</code> - 查询 token</li>
+</ul>
+</li>
+<li><strong>别名管理</strong>：
+<ul>
+<li><code>(～|~|鸣潮)添加(.*)(别名|昵称)(.*)</code> - 添加别名</li>
+<li><code>(～|~|鸣潮)删除(.*)(别名|昵称)(.*)</code> - 删除别名</li>
+<li><code>(～|~|鸣潮)(.*)(别名|昵称)</code> - 查询别名</li>
+</ul>
+</li>
+<li><strong>查询功能</strong>：
+<ul>
+<li><code>(～|~|鸣潮)(数据坞|声骸)(\d&#123;9&#125;)?</code> - 查询数据坞/声骸</li>
+<li><code>(～|~|鸣潮)(日历|日历列表|当前卡池)</code> - 查询日历/卡池</li>
+<li><code>(～|~|鸣潮)(挑战|挑战数据|全息战略)(\d&#123;9&#125;)?</code> - 查询挑战数据</li>
+<li><code>(～|~|鸣潮)(.*)面板(\d&#123;9&#125;)?</code> - 查询面板</li>
+<li><code>(～|~|鸣潮)(探索度|地图)(\d&#123;9&#125;)?</code> - 查询探索度/地图</li>
+<li><code>(～|~|鸣潮)?(.*)图鉴</code> - 查询图鉴</li>
+</ul>
+</li>
+<li><strong>抽卡记录</strong>：
+<ul>
+<li><code>(～|~|鸣潮)(常驻)?(角色|武器|武器常驻|自选|新手)?抽卡(统计|分析|记录)(.*)</code> - 查询抽卡记录/统计/分析</li>
+<li><code>(～|~|鸣潮)导入抽卡记录</code> - 导入抽卡记录</li>
+<li><code>(～|~|鸣潮)导出抽卡记录</code> - 导出抽卡记录</li>
+</ul>
+</li>
+<li><strong>其他功能</strong>：
+<ul>
+<li><code>(～|~|鸣潮)(随机)?(表情图)?</code> - 表情图</li>
+<li><code>(～|~|鸣潮)上传(.*)面板图</code> - 上传面板图</li>
+<li><code>(～|~|鸣潮)(.*)面板图列表</code> - 面板图列表</li>
+<li><code>(～|~|鸣潮)删除(.*)面板图(\d+)</code> - 删除面板图</li>
+<li><code>(～|~|鸣潮)原图</code> - 原图</li>
+</ul>
+</li>
+<li><strong>日常功能</strong>：
+<ul>
+<li><code>(～|~|鸣潮)(活动|新闻|公告|资讯)</code> - 活动/新闻/公告/资讯</li>
+<li><code>(～|~|鸣潮)(全部)?兑换码</code> - 兑换码</li>
+<li><code>(～|~|鸣潮)(波片|体力|日常数据)</code> - 波片/体力/日常数据</li>
+<li><code>(～|~|鸣潮)签到</code> - 签到</li>
+<li><code>(～|~|鸣潮)签到记录</code> - 签到记录</li>
+<li><code>(～|~|鸣潮)全部签到</code> - 全部签到</li>
+</ul>
+</li>
+<li><strong>自动功能</strong>：
+<ul>
+<li><code>(～|~|鸣潮)(开启|关闭)自动签到</code> - 开启/关闭自动签到</li>
+<li><code>(～|~|鸣潮)(开启|关闭)自动任务</code> - 开启/关闭自动任务</li>
+<li><code>(～|~|鸣潮)(开启|关闭)(波片|体力)?推送</code> - 开启/关闭波片/体力推送</li>
+<li><code>(～|~|鸣潮)(开启|关闭)(公告|新闻|活动)推送</code> - 开启/关闭公告/新闻/活动推送</li>
+<li><code>(～|~|鸣潮)(波片|体力)阈值(.*)</code> - 波片/体力阈值</li>
+</ul>
+</li>
+<li><strong>模拟抽卡</strong>：
+<ul>
+<li><code>(～|~|鸣潮)(角色|武器)?(十连|抽卡)</code> - 角色/武器抽卡/十连</li>
+</ul>
+</li>
+<li><strong>攻略</strong>：
+<ul>
+<li><code>(～|~|鸣潮)?(.*)攻略</code> - 攻略查询</li>
+</ul>
+</li>
+<li><strong>用户管理</strong>：
+<ul>
+<li><code>(～|~|鸣潮)(用户|账号|账户|tk)统计</code> - 用户统计</li>
+<li><code>(～|~|鸣潮)删除失效(用户|账号|账户|tk)</code> - 删除失效用户</li>
+</ul>
+</li>
+<li><strong>任务功能</strong>：
+<ul>
+<li><code>(～|~|鸣潮)(每日)?任务</code> - 每日任务</li>
+<li><code>(～|~|鸣潮)(每日)?任务列表</code> - 任务列表</li>
+<li><code>(～|~|鸣潮)全部(每日)?任务</code> - 全部任务</li>
+</ul>
+</li>
+<li><strong>深塔/练度</strong>：
+<ul>
+<li><code>(～|~|鸣潮)(逆境)?(深塔|深境|稳定|实验|超载)(\d&#123;9&#125;)?</code> - 深塔查询</li>
+<li><code>(～|~|鸣潮)(练度|练度统计)(\d&#123;9&#125;)?</code> - 练度统计</li>
+</ul>
+</li>
+<li><strong>玩家信息</strong>：
+<ul>
+<li><code>(～|~|鸣潮)(信息|卡片)(\d&#123;9&#125;)?</code> - 玩家信息/卡片</li>
+</ul>
+</li>
+<li><strong>插件管理</strong>：
+<ul>
+<li><code>(～|~|鸣潮)((插件)?(强制)?更新| update)</code> - 更新插件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="xianxin-plugin"><a class="markdownIt-Anchor" href="#xianxin-plugin"></a> xianxin-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://github.com/xianxincoder/xianxin-plugin" title="xianxin-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">xianxin-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://github.com/xianxincoder/xianxin-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：Yunzai-Bot 云崽QQ机器人 v3 插件，提供米游社功能、B站功能、群战、小游戏等多种功能</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>xianxin-plugin QQ群：426961091（进群问题答案：woc）</li>
+<li>素材来源于网络，仅供交流学习使用</li>
+<li>严禁用于任何商业用途和非法行为</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitee.com/xianxincoder/xianxin-plugin.git ./plugins/xianxin-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>米游社功能</strong>：cos查看、攻略查询、wiki查询、同人榜、热门话题</li>
+<li><strong>B站功能</strong>：up动态/直播推送、搜索up</li>
+<li><strong>群战</strong>：群战系统、战力、战榜</li>
+<li><strong>小游戏</strong>：五子棋、21点、给我点颜色看看</li>
+<li><strong>闲心小工具</strong>：赞我、神秘指令</li>
+<li><strong>云崽菜单辅助</strong>：菜单联想功能</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#*闲心(插件)?版本</code> - 查看版本信息</li>
+<li><code>#*闲心(插件)?(强制)?更新</code> - 更新插件</li>
+<li><code>#*(开|开启|关|关闭)菜单联想</code> - 开启/关闭菜单联想</li>
+</ul>
+</li>
+<li><strong>米游社功能</strong>：
+<ul>
+<li><code>#*攻略\s*.*</code> - 查询原神精选玩家攻略</li>
+<li><code>#*wiki\s*.*</code> - 查询原神wiki内容</li>
+<li><code>#*cos[a-z]*[0-9]*</code> - 查看cos榜</li>
+<li><code>#*cos[a-z]*[0-9]*详情</code> - cos榜详情</li>
+<li><code>#*cos(dby)*\s*.*</code> - 查看大别野cos榜</li>
+<li><code>#*同人[0-9]*</code> - 查看同人榜</li>
+<li><code>#*同人[0-9]*详情</code> - 同人榜详情</li>
+<li><code>#*同人\s*.*</code> - 查看同人内容</li>
+<li><code>#*热门话题[0-9]*</code> - 查看热聊话题</li>
+</ul>
+</li>
+<li><strong>群战</strong>：
+<ul>
+<li><code>#加入群战</code> / <code>#群战信息</code> - 初始化群战信息</li>
+<li><code>#战宝</code> - 战胜战宝获得双倍战力</li>
+<li><code>#战@群友</code> / <code>@群友</code> - 进行群战</li>
+<li><code>#狂战@群友</code> - 战狂专属技能</li>
+<li><code>#逆天改命</code> - 战力最低专属技能</li>
+<li><code>#战榜</code> - 查看群战rank榜</li>
+<li><code>#战狂榜</code> - 查看战斗次数排行榜</li>
+<li><code>#摆烂榜</code> - 查看战力倒数排行榜</li>
+</ul>
+</li>
+<li><strong>小游戏</strong>：
+<ul>
+<li><code>#五子棋</code> - 开局五子棋</li>
+<li><code>#21点</code> - 开局21点</li>
+<li><code>#给我点颜色看看</code> - 开局颜色游戏</li>
+</ul>
+</li>
+<li><strong>闲心小工具</strong>：
+<ul>
+<li><code>#*赞我</code> - QQ名片点赞</li>
+<li><code>#*(woc|卧槽)\s*[0-9]*</code> - 情绪激动时的神秘指令</li>
+<li><code>#*(woc|卧槽)\s*pro</code> - 情绪激动时的pro版指令</li>
+<li><code>#*小视频\s*.*</code> - 小视频</li>
+<li><code>#*(l)?sp\s*.*</code> - sp内容</li>
+<li><code>#*(开|开启|关|关闭)sp\s*[0-9]*</code> - 开启/关闭sp</li>
+<li><code>#*(神秘)?(pro)?换源\s*.*</code> - 换源</li>
+<li><code>#*潜水\s*(图)?\s*[0-9]*</code> - 潜水</li>
+<li><code>#*大地图\s*.*</code> - 大地图</li>
+</ul>
+</li>
+<li><strong>其他功能</strong>：
+<ul>
+<li><code>#*清理缓存文件</code> - 清理缓存文件</li>
+<li><code>#*清理无效数据</code> - 清理无效数据</li>
+<li><code>(戳|撤|禁|踢)+\s*[0-9]*</code> - 群管功能</li>
+<li><code>#*快管删除(.*)</code> - 快管删除</li>
+<li><code>#*快管列表</code> - 快管列表</li>
+<li><code>#.*</code> - 云崽菜单辅助（菜单联想）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="xitian-plugin"><a class="markdownIt-Anchor" href="#xitian-plugin"></a> xitian-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://github.com/XiTianGame/xitian-plugin" title="xitian-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">xitian-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://github.com/XiTianGame/xitian-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：一个 Yunzai-Bot（V3）的插件管理器，为用户提供插件管理功能，仅支持 js 类插件管理</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>不支持喵喵插件等大型插件管理</li>
+<li>素材来源于网络，仅供交流学习使用</li>
+<li>严禁用于商业和非法用途</li>
+<li>暂无群号，出现问题可以提交 issue（建议 github，因为有邮件提醒）</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>（两种方法二选一）：
+<ul>
+<li>GitHub：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/XiTianGame/xitian-plugin.git ./plugins/xitian-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+<li>Gitee（可能更新不及时）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/XiTianGame/xitian-plugin.git ./plugins/xitian-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><strong>安装依赖</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm install --filter=xitian-plugin</span><br></pre></td></tr></table></figure>
+</li>
+<li>插件管理器会自动进行依赖安装</li>
+<li>插件加载完成后发送 <code>#插件帮助</code> 可以获取命令图</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>插件管理</strong>：查看全部插件、插件启用停用、插件删除恢复、插件重命名、插件查找、查看插件</li>
+<li><strong>插件分组管理</strong>：创建删除分组、插件设置分组、同步 plugins 目录下的分组</li>
+<li><strong>命令</strong>：命令总览、测试命令</li>
+<li><strong>插件智能覆盖安装</strong>：插件智能重命名、更新插件、插件管理权限控制、插件核验</li>
+<li><strong>V2 插件识别</strong></li>
+<li><strong>plugin 插件管理</strong>：插件通过网址安装、删除 git 插件</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>插件基本命令</strong>：
+<ul>
+<li><code>#插件(管理器)?(菜单|帮助|help)</code> - 查看所有指令</li>
+<li><code>#插件(管理器)?版本</code> - 查看版本信息</li>
+<li><code>#插件(管理器)?更新日志</code> - 查看更新日志</li>
+<li><code>#插件(管理器)?(强制)*更新</code> - 更新插件管理器</li>
+</ul>
+</li>
+<li><strong>插件管理</strong>：
+<ul>
+<li><code>#插件列表</code> - 查看全部插件</li>
+<li><code>#查看插件(.*)</code> - 查看指定插件</li>
+<li><code>#查找插件(.*)</code> - 查找插件</li>
+<li><code>#(安装|新增|增加)插件(.*)</code> - 从 plugin 仓库中克隆插件</li>
+<li><code>#开始批量安装插件</code> - 批量安装插件</li>
+<li><code>#停用插件(.*)</code> - 停用插件</li>
+<li><code>#启用插件(.*)</code> - 启用插件</li>
+<li><code>#(彻底)?删除插件(.*)</code> - 删除插件（彻底删除或放回收站）</li>
+<li><code>#恢复插件(.*)</code> - 恢复插件</li>
+<li><code>#插件(.*)重命名(.*)</code> - 重命名插件</li>
+</ul>
+</li>
+<li><strong>插件分组管理</strong>：
+<ul>
+<li><code>#分组列表</code> - 查看分组列表</li>
+<li><code>#创建分组(.*)</code> - 创建分组</li>
+<li><code>#删除分组(.*)</code> - 删除分组</li>
+<li><code>#(.*)设置分组(.*)</code> - 设置插件分组</li>
+<li><code>#同步分组</code> - 同步 plugins 目录下的分组</li>
+</ul>
+</li>
+<li><strong>回收站</strong>：
+<ul>
+<li><code>#查看回收站</code> - 查看回收站</li>
+<li><code>#清空回收站</code> - 清空回收站</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="y-tian-plugin"><a class="markdownIt-Anchor" href="#y-tian-plugin"></a> y-tian-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://gitee.com/wan13877501248/y-tian-plugin" title="y-tian-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">y-tian-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://gitee.com/wan13877501248/y-tian-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：Yunzai-Bot 的 Ai 集成 plugin，提供丰富 Ai 生态，致力于为用户提供免费 AI 模型，支持 100+ 大模型（包括 GPT-4/4-all 等）</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>非法用途（如色情、暴力、涉政等）将导致用户 IP 封禁</li>
+<li>本项目 Ai 大多数均为免费公益，切勿被骗</li>
+<li>阴天提供的综合免费方案为：附加方案</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>（任选其一）：
+<ul>
+<li>Gitee（最新）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gitee.com/wan13877501248/y-tian-plugin.git ./plugins/y-tian-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+<li>Gitee（V2 工具箱，测试中）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --branch V2 --single-branch https://gitee.com/wan13877501248/y-tian-plugin.git ./plugins/y-tian-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+<li>GitHub（最新）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/yuanplussfive/y-tian-plugin.git ./plugins/y-tian-plugin/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><strong>安装依赖</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> plugins/y-tian-plugin</span><br><span class="line">pnpm install</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>AI 模型支持</strong>：ChatGPT、Anthropic、ChatGLM、Gemini、Stable Diffusion、Midjourney、Suno、Pika、Bing、Copilot、Cohere 等主流 AI 模型</li>
+<li><strong>功能支持</strong>：文本生成、图像绘制、语音合成、AI 作曲、文件处理、文件生成等</li>
+<li><strong>多功能集成</strong>：AI 集成、娱乐、游戏、学习、影视等多种功能</li>
+<li><strong>免费与高级功能</strong>：提供多种免费 AI 模型，高级功能供赞助用户提前体验</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>帮助命令</strong>：
+<ul>
+<li><code>(/|#)?阴天(帮助|help)</code> - 阴天帮助</li>
+<li><code>(/|#)?(AI|Ai|ai)总帮助</code> - AI 总帮助</li>
+<li><code>(/|#)?(AI|Ai|ai)免费外站帮助</code> - 免费外站帮助</li>
+<li><code>(/|#)?(阴天|免费)(绘图|画图)帮助</code> - 免费绘图帮助</li>
+<li><code>(/|#)?slack帮助</code> - slack 帮助</li>
+<li><code>(/|#)?娱乐帮助</code> - 娱乐帮助</li>
+<li><code>(/|#)?游戏帮助</code> - 游戏帮助</li>
+<li><code>(/|#)?群管帮助</code> - 群管帮助</li>
+<li><code>(/|#)?(ai|AI|Ai)专业版帮助</code> - 专业版帮助</li>
+<li><code>(/|#)?(ai|AI|Ai)积分版帮助</code> - 积分版帮助</li>
+<li><code>(/|#)(AI|Ai|ai)附加版帮助</code> - 附加版帮助</li>
+<li><code>(/|#)(AI|Ai|ai)逆向版帮助</code> - 逆向版帮助</li>
+<li><code>(/|#)图视帮助</code> - 图视帮助</li>
+<li><code>(/|#)(AI|Ai|ai)免费国产帮助</code> - 免费国产帮助</li>
+<li><code>(/|#)(AI|Ai|ai)交互帮助</code> - 交互帮助</li>
+<li><code>^/sess帮助</code> - sess 帮助</li>
+<li><code>^/impart帮助</code> - impart 帮助</li>
+</ul>
+</li>
+<li><strong>模型列表</strong>：
+<ul>
+<li><code>(/|#)附加模型大全</code> - 附加模型大全</li>
+<li><code>(/|#)chat模型大全</code> - chat 模型大全</li>
+<li><code>(/|#)逆向模型大全</code> - 逆向模型大全</li>
+<li><code>(/|#)god模型大全</code> - god 模型大全</li>
+</ul>
+</li>
+<li><strong>AI 对话设置</strong>：
+<ul>
+<li><code>#(ai|Ai|AI)对话方式(文本|图片|图片2|引用|转发|语音|拟人)</code> - 设置对话方式</li>
+<li><code>#图片渲染使用(1|2|3|4)</code> - 设置图片渲染</li>
+<li><code>#(开启|关闭)提示回复</code> - 开启/关闭提示回复</li>
+<li><code>#更改(逆向|chat|god|附加)触发词(.*)</code> - 更改触发词</li>
+<li><code>#更改回复提示词(.*)</code> - 更改回复提示词</li>
+<li><code>#(ai|Ai|AI)(开启|关闭)(艾特|at)</code> - 开启/关闭艾特回复</li>
+<li><code>#(艾特|at)回复使用(god|chat|逆向|附加)</code> - 设置艾特回复方案</li>
+<li><code>#私聊回复使用(god|chat|逆向|附加)</code> - 设置私聊回复方案</li>
+<li><code>#(开启|关闭)私聊回复</code> - 开启/关闭私聊回复</li>
+<li><code>#(开启|关闭)(tts|TTS)回复</code> - 开启/关闭 TTS 回复</li>
+<li><code>#切换(tts|TTS)角色(.*)</code> - 切换 TTS 角色</li>
+<li><code>#(tts|TTS)角色大全</code> - TTS 角色大全</li>
+<li><code>#(禁用|解禁)方案(god|chat|附加|逆向)</code> - 禁用/解禁方案</li>
+<li><code>#(禁用|解禁)(ai|Ai|AI)</code> - 禁用/解禁 AI</li>
+<li><code>#(ai|AI|Ai)(禁用|解禁)该群</code> - 禁用/解禁该群 AI</li>
+<li><code>#查看(Ai|ai|AI)总设置</code> - 查看 AI 总设置</li>
+</ul>
+</li>
+<li><strong>AI 记忆/预设</strong>：
+<ul>
+<li><code>#(开启|关闭)(chat|god|附加|逆向)方案记忆限制</code> - 开启/关闭记忆限制</li>
+<li><code>#设置(chat|god|附加|逆向)记忆条数(.*)</code> - 设置记忆条数</li>
+<li><code>#(删除|查看)预设(.*)</code> - 删除/查看预设</li>
+<li><code>#(开启|关闭)预设添加</code> - 开启/关闭预设添加</li>
+<li><code>#(开启|关闭)群记录携带</code> - 开启/关闭群记录携带</li>
+<li><code>#(新增|删除)(ai|AI|aI)违禁词(.*)</code> - 新增/删除违禁词</li>
+<li><code>#(开启|关闭)附加(联网|搜索)</code> - 开启/关闭附加联网/搜索</li>
+<li><code>#(搜索|查看|下载)云预设[sS]*</code> - 搜索/查看/下载云预设</li>
+<li><code>#下载预设[sS]*</code> - 下载预设</li>
+<li><code>#上传预设[sS]*</code> - 上传预设</li>
+</ul>
+</li>
+<li><strong>游戏/娱乐</strong>：
+<ul>
+<li><code>#抽乌龟</code> - 抽乌龟游戏</li>
+<li><code>#抽一张</code> - 抽一张</li>
+<li><code>#清除抽乌龟数据</code> - 清除抽乌龟数据</li>
+</ul>
+</li>
+<li><strong>AI 绘图</strong>：
+<ul>
+<li><code>#(pix|play|play3|sdxl|flux|pro|sch|max|realism|sd3|sd35|gen3|recraft|ty)绘图(.*)</code> - 各种绘图模型</li>
+<li><code>#dalle(3)?绘图(.*)</code> - DALL-E 绘图</li>
+<li><code>#(激萌|即梦|jimeng)绘图(.*)</code> - 激萌/即梦绘图</li>
+<li><code>#(激萌|即梦|jimeng)视频(.*)</code> - 激萌/即梦视频</li>
+<li><code>#(noob|Noob|noobai)绘图(.*)</code> - noob 绘图</li>
+<li><code>#(nbxl|Nbxl)绘图(.*)</code> - nbxl 绘图</li>
+<li><code>#(Wai|wai)绘图(.*)</code> - Wai 绘图</li>
+<li><code>#(Ani|ani)绘图(.*)</code> - Ani 绘图</li>
+<li><code>#(Af|af)绘图(.*)</code> - Af 绘图</li>
+<li><code>#(md|Md|Ms|ms)绘图(.*)</code> - md 绘图</li>
+<li><code>#(Nai|nai)绘图(.*)</code> - Nai 绘图</li>
+</ul>
+</li>
+<li><strong>slack 对话</strong>：
+<ul>
+<li><code>/slack(.*)</code> - slack 对话</li>
+<li><code>(/|#)?结束slack对话</code> - 结束 slack 对话</li>
+</ul>
+</li>
+<li><strong>网页功能</strong>：
+<ul>
+<li><code>#?解析网页\s*(.+)</code> - 解析网页</li>
+<li><code>#?网页截图\s*(.+)</code> - 网页截图</li>
+</ul>
+</li>
+<li><strong>全局方案</strong>：
+<ul>
+<li><code>#全局方案(设置|修改|启用|禁用).*</code> - 设置/修改/启用/禁用全局方案</li>
+<li><code>#全局方案(查看|显示).*</code> - 查看/显示全局方案</li>
+<li><code>#全局方案(添加|删除)(白名单群组|Gemini密钥|触发前缀|过滤消息|Gemini工具列表|OpenAI工具列表|OneAPI工具列表|OneAPI密钥|GrokSSO|WorkosCursorToken|Gemini代理列表).*</code> - 添加/删除全局方案</li>
+<li><code>#全局方案配置帮助</code> - 全局方案配置帮助</li>
+</ul>
+</li>
+<li><strong>插件管理</strong>：
+<ul>
+<li><code>#*阴天(插件)?(强制)?更新</code> - 更新插件</li>
+<li><code>#*阴天(插件)?(启动|开启)服务器? (docker|pm2|node)?</code> - 启动服务器</li>
+<li><code>#*阴天(插件)?(关闭|停止)服务器? (docker|pm2|node)?</code> - 关闭服务器</li>
+<li><code>#*阴天服务端状态</code> - 服务端状态</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="yenai-plugin"><a class="markdownIt-Anchor" href="#yenai-plugin"></a> yenai-plugin</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://gitee.com/yeyang52/yenai-plugin" title="yenai-plugin 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">yenai-plugin 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://gitee.com/yeyang52/yenai-plugin</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：Yenai-Plugin 是一个 Yunzai-Bot 的扩展插件，提供对 Bot 的一些便捷操作</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>该分支为 yenai-plugin v2 版本，配置文件进行重构，无法直接从 v1 进行迁移，可能需要重新安装以确保不会发生未知问题</li>
+<li>如果觉得项目有帮助，请给一个星星（Starred）</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>（两种方法二选一）：
+<ul>
+<li>GitHub：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b v2 --depth=1 https://github.com/yeyang52/yenai-plugin.git ./plugins/yenai-plugin</span><br></pre></td></tr></table></figure>
+</li>
+<li>Gitee：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b v2 --depth=1 https://gitee.com/yeyang52/yenai-plugin.git ./plugins/yenai-plugin</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><strong>安装依赖</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm install</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>事件通知</strong>：好友消息、群消息、群临时消息、群撤回、好友撤回、好友申请、加群申请、群聊邀请、好友列表变动、群聊列表变动、群成员变动、群管理变动、Bot 被禁言等通知</li>
+<li><strong>助手功能</strong>：发送好友/群聊/多群聊消息、改群头像、改昵称、改状态、改签名、退群、删好友、改性别、改群名片、获取好友/群列表、开/关戳一戳、撤回消息、开/关好友添加、更改好友申请方式、设置机型、拉黑白群/用户、取图片链接、ocr、看群?头像、修改日志等级、查看说说、删除说说、发说说</li>
+<li><strong>群管功能</strong>：禁言、解禁、全体禁言、全体解禁、踢出群聊、踢出群聊并拉黑、设置管理、取消管理、修改头衔、申请头衔、获取禁言列表等</li>
+<li><strong>违禁词</strong>：新增违禁词、删除违禁词、查看违禁词、违禁词列表、设置违禁词禁言时间、头衔屏蔽词等</li>
+<li><strong>验证功能</strong>：重新验证、绕过验证、开/关验证、切换验证模式、设置验证超时时间等</li>
+<li><strong>公告功能</strong>：发群公告、删群公告、查群公告等</li>
+<li><strong>群数据</strong>：谁是龙王、群星汇、群数据、今日打卡、谁生日等</li>
+<li><strong>其他功能</strong>：随机/幸运字符、搜图搜番、bika 功能、投票功能等</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>违禁词</strong>：
+<ul>
+<li><code>^#?新增(模糊|精确|正则)?(踢|禁|撤|踢撤|禁撤)?违禁词</code> - 新增违禁词</li>
+<li><code>^#?删除违禁词</code> - 删除违禁词</li>
+<li><code>^#?查看违禁词</code> - 查看违禁词</li>
+<li><code>^#?违禁词列表(原始|raw)?$</code> - 违禁词列表</li>
+<li><code>^#?设置违禁词禁言时间(\d+)$</code> - 设置违禁词禁言时间</li>
+<li><code>^#(增加|减少|查看)头衔屏蔽词</code> - 头衔屏蔽词</li>
+<li><code>^#切换头衔屏蔽词匹配(模式)?$</code> - 切换头衔屏蔽词匹配模式</li>
+</ul>
+</li>
+<li><strong>验证功能</strong>：
+<ul>
+<li><code>^#重新验证(\d+|从未发言的人)?$</code> - 重新验证</li>
+<li><code>^#绕过验证(\d+)?$</code> - 绕过验证</li>
+<li><code>^#(开启|关闭)验证$</code> - 开启/关闭验证</li>
+<li><code>^#切换验证模式$</code> - 切换验证模式</li>
+<li><code>^#设置验证超时时间(\d+)(s|秒)?$</code> - 设置验证超时时间</li>
+</ul>
+</li>
+<li><strong>群数据</strong>：
+<ul>
+<li><code>^#?(谁|哪个吊毛|哪个屌毛|哪个叼毛)是龙王$</code> - 谁是龙王</li>
+<li><code>^#群星汇$</code> - 群星汇</li>
+<li><code>^#群数据(7|天)?天?$</code> - 群数据</li>
+<li><code>^#今日打卡$</code> - 今日打卡</li>
+<li><code>^#((今|昨|前|明|后)天|\d&#123;4&#125;-\d&#123;1,2&#125;-\d&#123;1,2&#125;)谁生日$</code> - 谁生日</li>
+</ul>
+</li>
+<li><strong>公告功能</strong>：
+<ul>
+<li><code>^#发群?公告$</code> - 发群公告</li>
+<li><code>^#删群?公告(\d+)$</code> - 删群公告</li>
+<li><code>^#查群?公告$</code> - 查群公告</li>
+</ul>
+</li>
+<li><strong>随机/幸运字符</strong>：
+<ul>
+<li><code>^#(随机)?(幸运)?字符(列表)?$</code> - 随机/幸运字符列表</li>
+<li><code>^#(随机)?(幸运)?字符$</code> - 随机/幸运字符</li>
+<li><code>^#替换(幸运)?字符(\d+)$</code> - 替换幸运字符</li>
+<li><code>^#(开启|关闭)(幸运)?字符$</code> - 开启/关闭幸运字符</li>
+</ul>
+</li>
+<li><strong>群管功能</strong>：
+<ul>
+<li><code>^#?群管(加|入|黑|白)名单$</code> - 群管黑名单/白名单</li>
+<li><code>^#?(开启|关闭)白名单(自动)?解禁$</code> - 开启/关闭白名单自动解禁</li>
+<li><code>/^#禁言\s?(\d+)\s(\d+)\s([一壹二两三四五六七八九十百千万亿\d]+)?(毫秒|秒|S|SECOND|分|分钟|M|MIN|MINUTE|时|小时|H|HOUR|天|日|D|DAY|周|W|WEEK|月|MONTH|年|Y|YEAR)?$/</code> - 禁言</li>
+<li><code>^#解禁\s?(\d+)\s(\d+)$</code> - 解禁</li>
+<li><code>^#全体(禁言|解禁)(\d+)$</code> - 全体禁言/解禁</li>
+<li><code>^#踢\s?(\d+)\s(\d+)$</code> - 踢出群聊</li>
+</ul>
+</li>
+<li><strong>助手功能</strong>：
+<ul>
+<li><code>^#(改|更)头像$</code> - 改头像</li>
+<li><code>^#(改|更)(昵|称)?$</code> - 改昵称</li>
+<li><code>^#改签名$</code> - 改签名</li>
+<li><code>^#改状态$</code> - 改状态</li>
+<li><code>^#退群$</code> - 退群</li>
+<li><code>^#删好友$</code> - 删好友</li>
+<li><code>^#改性别$</code> - 改性别</li>
+<li><code>^#改群名片$</code> - 改群名片</li>
+<li><code>^#(改|更)群头像$</code> - 改群头像</li>
+<li><code>^#改群(昵|称)?$</code> - 改群昵称</li>
+<li><code>^#(获取)?(群|好友)列表$</code> - 获取群/好友列表</li>
+<li><code>^#(开启|关闭)戳一戳$</code> - 开启/关闭戳一戳</li>
+<li><code>^#?撤回$</code> - 撤回</li>
+<li><code>^#(开启|关闭)好友添加$</code> - 开启/关闭好友添加</li>
+<li><code>/^#更改好友申请方式([0123])((.*)\s(.*))?$/</code> - 更改好友申请方式</li>
+<li><code>^#设置机型$</code> - 设置机型</li>
+</ul>
+</li>
+<li><strong>插件管理</strong>：
+<ul>
+<li><code>^#*椰奶(插件)?(强制)?更新$</code> - 更新插件</li>
+<li><code>^#?椰奶(插件)?更新日志$</code> - 更新日志</li>
+</ul>
+</li>
+<li><strong>搜图搜番</strong>：
+<ul>
+<li><code>/^#?椰奶(插件)?(群管|涩涩)?(帮助|菜单|功能)$/</code> - 椰奶帮助</li>
+<li><code>^#?(椰奶)?(以图)?搜图$</code> - 搜图</li>
+<li><code>/^#?(SauceNAO|sn)搜图$/i</code> - SauceNAO 搜图</li>
+<li><code>/^#?(椰奶|WhatAnime|wa)?(以图)?搜番$/i</code> - 搜番</li>
+<li><code>/^#?(Ascii2D|ac)搜图$/i</code> - Ascii2D 搜图</li>
+<li><code>/^#设置SauceNAOApiKey/i</code> - 设置 SauceNAO API Key</li>
+</ul>
+</li>
+<li><strong>bika 功能</strong>：
+<ul>
+<li><code>^#?(bika|哔咔)(类别|作者|高级)?搜索</code> - bika 搜索</li>
+<li><code>^#?(bika|哔咔)id</code> - bika id 搜索</li>
+<li><code>^#?(bika|哔咔)看\d+$</code> - bika 看</li>
+<li><code>^#?(bika|哔咔)下一页$</code> - bika 下一页</li>
+<li><code>^#?(bika|哔咔)类别列表$</code> - bika 类别列表</li>
+<li><code>^#?(bika|哔咔)(详情|细节)(.*)$</code> - bika 详情</li>
+<li><code>^#?(bika|哔咔)修改图片质量(.*)$</code> - bika 修改图片质量</li>
+<li><code>^#?(bika|哔咔)(开启|关闭)直连$</code> - bica 开启/关闭直连</li>
+</ul>
+</li>
+<li><strong>投票功能</strong>：
+<ul>
+<li><code>^#(发起)?投票(禁言|踢人)$</code> - 发起投票</li>
+<li><code>^#(支持|反对)投票$</code> - 支持/反对投票</li>
+<li><code>^#(启用|禁用)投票(禁言|踢人)$</code> - 启用/禁用投票</li>
+<li><code>/^#?投票设置(超时时间|最低票数|禁言时间)?(\d*)$/</code> - 投票设置</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="yunzai-plugin-deer-pipe"><a class="markdownIt-Anchor" href="#yunzai-plugin-deer-pipe"></a> yunzai-plugin-deer-pipe</h3>
+<ul>
+<li><strong>项目地址</strong>：<div class="post-link-card-wrap">
+		<div class="post-link-card">
+			<a href="https://github.com/zhiyu1998/yunzai-plugin-deer-pipe" title="yunzai-plugin-deer-pipe 插件" rel="noopener nofollow noreferrer" target="_blank"></a>
+			<div class="post-link-card-cover-wrap auto"><div class="icon-globe"></div></div>
+			<div class="post-link-card-item-wrap">
+				<div class="post-link-card-title">yunzai-plugin-deer-pipe 插件</div>
+				<div class="post-link-card-excerpt"><span class="icon-link"></span>https://github.com/zhiyu1998/yunzai-plugin-deer-pipe</div>
+			</div>
+		</div>
+	</div></li>
+<li><strong>插件简介</strong>：一个🦌管签到小插件，源想法和代码都来自 nonebot-plugin-deer-pipe</li>
+<li><strong>注意事项</strong>：
+<ul>
+<li>哥们大自然的搬运工，算法也只是稍微修改下</li>
+<li>文件借鉴了很多插件，精简了个人认为可以精简的内容</li>
+<li>素材来源于网络，仅供交流学习使用</li>
+<li>严禁用于任何商业用途和非法行为</li>
+<li>如果对你有帮助辛苦给个 star，这是对我最大的鼓励</li>
+</ul>
+</li>
+<li><strong>安装方法</strong>：
+<ol>
+<li><strong>下载插件本体</strong>（两种方法二选一）：
+<ul>
+<li>国内（Gitee）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitee.com/kyrzy0416/yunzai-plugin-deer-pipe.git ./plugins/yunzai-plugin-deer-pipe/</span><br></pre></td></tr></table></figure>
+</li>
+<li>海外（GitHub）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zhiyu1998/yunzai-plugin-deer-pipe.git ./plugins/yunzai-plugin-deer-pipe/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><strong>安装依赖</strong>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm i --filter=yunzai-plugin-deer-pipe</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li><strong>🦌管签到</strong>：每日🦌管签到</li>
+<li><strong>补🦌/补戒🦌</strong>：支持补签之前的日期</li>
+<li><strong>🦌榜/戒🦌榜</strong>：查看🦌管和戒🦌的排名</li>
+<li><strong>🦌友系统</strong>：添加🦌友、帮🦌、查看我的🦌友</li>
+</ul>
+</li>
+<li><strong>命令列表</strong>：
+<ul>
+<li><strong>🦌友管理</strong>：
+<ul>
+<li><code>^添加(🦌|鹿|戒🦌|戒鹿).*</code> - 添加🦌友</li>
+<li><code>^绝交(🦌|鹿|戒🦌|戒鹿).*</code> - 绝交🦌友</li>
+<li><code>^我的(🦌|鹿|戒🦌|戒鹿)</code> - 查看我的🦌友</li>
+</ul>
+</li>
+<li><strong>排名查看</strong>：
+<ul>
+<li><code>^(🦌|鹿|戒🦌|戒鹿)排名</code> - 查看🦌/戒🦌排名</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <footer class="article-footer">
+        <a data-aos="zoom-in" href="/blog/2026/04/05/guide/#comments" class="article-comment-link">
+          <span class="post-comments-count waline-comment-count" data-path="/blog/2026/04/05/guide/" itemprop="commentCount"></span>
+          留言
+        </a>
+        <span data-aos="zoom-in" class="article-visitor-link">
+          <span class="waline-pageview-count" data-path="/blog/2026/04/05/guide/">0</span>
+          <em class="post-meta-item-text">阅读量</em>
+        </span>
+        <a class="article-category-link" href="/blog/categories/%E6%8A%80%E6%9C%AF/" title="技术" data-aos="zoom-in">技术</a>
+
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/blog/tags/Nahida/" rel="tag" title="Nahida">Nahida</a></li><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/blog/tags/%E6%95%99%E7%A8%8B/" rel="tag" title="教程">教程</a></li></ul>
+
+    </footer>
+  </div>
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+    <div class="article-nav-link-wrap right">
+        <img data-src="/blog/images/100639369_p0.webp" data-sizes="auto" alt="Nahida搭建教程" class="lazyload">
+      <a href="/blog/2026/04/02/Nahida/" aria-label="后一篇: Nahida搭建教程"  title="后一篇: Nahida搭建教程"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+          Nahida搭建教程
+      </h3>
+    </div>
+  </nav>
+
+</article>
+
+  <section id="comments" data-aos="fade-up">
+    <div class="comment-header">
+        
+      <h2 class="comment-title">说些什么吧！</h2>
+      <div class="comment-selector">
+        <div class="comment-selector-wrap">
+            <div class="selector-item" data-selector="waline">
+              <span>waline</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="comment-content">
+          <div class="comment waline-comment" data-aos="fade-up"
+            id="waline-comment">
+          </div>
+    </div>
+  </section>
+
+</section>
+        </div>
+        <footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+        2020-2026
+        <span class="footer-info-sep rotate"></span>
+      年越·Rukawa
+    </div>
+      <div>
+        基于&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+      <div>
+        <span class="icon-brush"></span>
+        19.1k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        01:12
+      </div>
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+  </div>
+</footer>
+
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+        <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#nahida-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text"> Nahida 使用教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%88%97%E8%A1%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 插件列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#atlas"><span class="toc-number">1.1.1.</span> <span class="toc-text"> Atlas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arknights-plugin"><span class="toc-number">1.1.2.</span> <span class="toc-text"> arknights-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#earth-k-plugin"><span class="toc-number">1.1.3.</span> <span class="toc-text"> earth-k-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example"><span class="toc-number">1.1.4.</span> <span class="toc-text"> example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fansky_qs"><span class="toc-number">1.1.5.</span> <span class="toc-text"> FanSky_Qs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flower-plugin"><span class="toc-number">1.1.6.</span> <span class="toc-text"> flower-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#genshin"><span class="toc-number">1.1.7.</span> <span class="toc-text"> genshin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#liangshi-calc"><span class="toc-number">1.1.8.</span> <span class="toc-text"> liangshi-calc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#logier-plugin"><span class="toc-number">1.1.9.</span> <span class="toc-text"> logier-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mc-plugin"><span class="toc-number">1.1.10.</span> <span class="toc-text"> mc-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#memz-plugin"><span class="toc-number">1.1.11.</span> <span class="toc-text"> memz-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mora-plugin"><span class="toc-number">1.1.12.</span> <span class="toc-text"> mora-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nai-plugin"><span class="toc-number">1.1.13.</span> <span class="toc-text"> nai-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#phi-plugin"><span class="toc-number">1.1.14.</span> <span class="toc-text"> phi-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rconsole-plugin"><span class="toc-number">1.1.15.</span> <span class="toc-text"> rconsole-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#san-plugin"><span class="toc-number">1.1.16.</span> <span class="toc-text"> San-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#starrail-plugin"><span class="toc-number">1.1.17.</span> <span class="toc-text"> StarRail-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#system"><span class="toc-number">1.1.18.</span> <span class="toc-text"> system</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#trss-plugin"><span class="toc-number">1.1.19.</span> <span class="toc-text"> TRSS-Plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#waves-plugin"><span class="toc-number">1.1.20.</span> <span class="toc-text"> waves-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xianxin-plugin"><span class="toc-number">1.1.21.</span> <span class="toc-text"> xianxin-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xitian-plugin"><span class="toc-number">1.1.22.</span> <span class="toc-text"> xitian-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#y-tian-plugin"><span class="toc-number">1.1.23.</span> <span class="toc-text"> y-tian-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yenai-plugin"><span class="toc-number">1.1.24.</span> <span class="toc-text"> yenai-plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yunzai-plugin-deer-pipe"><span class="toc-number">1.1.25.</span> <span class="toc-text"> yunzai-plugin-deer-pipe</span></a></li></ol></li></ol></li></ol>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/blog/avatar/b_3d4ccbe76e56e3501484e4d110ddecc1.jpg" data-sizes="auto" alt="年越·Rukawa" class="lazyload">
+  <div class="sidebar-author-name">年越·Rukawa</div>
+  <div class="sidebar-description">大家の幻想乡 - 年越·Rukawa的技术与生活分享博客</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">2</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">7</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/blog/" aria-label="首页"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">首页</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/blog/archives" aria-label="归档"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">归档</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/blog/about" aria-label="关于"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">关于</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/blog/friend" aria-label="友链"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">友链</div>
+      </div>
+</div>
+</div>
+  </div>
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+</nav>
+
+    </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+  
+<script src="https://npm.webcache.cn/material-theme@1.0.0/dist/material-theme.umd.js" integrity="sha384-vLev0II0HKFaxkcm+&#x2F;7kX5IGwVFBASkGchU311wmU&#x2F;veIj2bB0UcBkQbW6yw2asK" crossorigin="anonymous"></script>
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+  
+<script src="/blog/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/blog/js/pjax_script.js" data-pjax></script>
+
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!true || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js" integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8+pUoWX8n1rgq282T" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+  
+<script src="https://npm.webcache.cn/theme-shokax-pjax@0.0.3/dist/index.umd.js" integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE&#x2F;jMSCxD+jAPU55x&#x2F;jj3wlf" crossorigin="anonymous"></script>
+
+  
+<script src="/blog/js/pjax.js"></script>
+
+
+  <script>
+    var setupLive2d = () => {
+      live2d.init("https://fastly.jsdelivr.net/gh/D-Sketon/plugin-live2d/", {themeTipsPath: ""});
+    }
+  </script>
+  
+<script src="https://fastly.jsdelivr.net/gh/D-Sketon/plugin-live2d/js/live2d-autoload.js" onload="setupLive2d()" async></script>
+
+
+
+  
+<script src="https://npm.webcache.cn/quicklink@3.0.1/dist/quicklink.umd.js" integrity="sha384-caMDqvgav&#x2F;HWdEYQU1QRRHMLleigpL1YHAG0m371DhzfL8rRzUyOb+bEHtwlmYjD" crossorigin="anonymous"></script>
+
+  <script data-pjax>
+    window.quicklink?.listen({
+      timeout: 3000,
+      priority: true,
+      ignores: []
+    });
+  </script>
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "年越·Rukawa",
+          title: "Nahida 使用教程",
+          url: "https://nianyuechan.github.io/blog/2026/04/05/guide/",
+          excerpt: "",
+          description: "Nahida 工具的详细使用教程",
+          stripContent: " Nahida 使用教程  插件列表  Atlas  项目地址：                    Atlas 插件     https://gitee.com/Nwflower/atlas          插件简介：适用于V3版本及以上Yunzai-Bot的图鉴查询插件，可通过Yunzai-Bot查询游戏图鉴，插件代码严格遵循ES6规范 支持的图鉴库：  原神图鉴库：Genshin-Atlas 崩坏：星穹铁道图鉴库：star-rail-atlas 绝区零图鉴库：zzz-atlas   安",
+          date: "Sun Apr 05 2026 00:00:00 GMT+0800",
+          updated: "Mon Apr 06 2026 16:50:49 GMT+0800",
+          cover: "/blog/images/102188682_p0.png",
+        };
+      </script>
+        
+<script src="/blog/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/blog/js/tabs.js" data-pjax defer></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+<script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+
+  var commentConfigKeys = ["waline"];
+  var commentConfig = {
+    waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.mjs';
+        const walineIntegrity = 'sha384-9sbqJjrfGjbkI6/PI4nU/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH/KinBEAZII/5';
+
+        const module = await safeImport(walineCdn, walineIntegrity);
+        walineInit = module.init;
+
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https://替换为你的Waline服务端地址',
+          lang: document.documentElement.lang || 'en',
+          locale: {},
+          emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"],
+          meta: ["nick","mail","link"],
+          requiredMeta: ["nick","mail"],
+          wordLimit: JSON.parse('0'),
+          comment: true,
+          pageSize: JSON.parse('10'),
+          dark: 'html[data-theme="dark"]',
+          pageview: JSON.parse('true'),
+        });
+      }
+    },
+  }
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    // 1. 首先检查localStorage中是否有保存的评论类型
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    // 2. 如果localStorage中有值且对应的评论系统可用，就使用它
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    // 3. 如果localStorage无效，检查配置的默认评论系统
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    // 4. 如果前两项都无效，按指定顺序找到第一个可用的评论系统
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    // 隐藏所有评论容器
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    // 按需加载评论系统
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        // 如果已加载，只需显示对应容器
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      // 根据类型加载对应的脚本
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    // 评论组件选择器
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      // 获取要加载的评论系统类型
+      const commentType = item.getAttribute('data-selector');
+
+      // 隐藏所有评论系统
+      hideAllComments();
+
+      // 加载选中的评论系统
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      // 评论组件选择器点击事件
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          // 保存选择器状态
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          // 切换选中状态
+          changeActiveCommentItems(item);
+        });
+      }
+
+      // 检查是否需要加载默认评论系统
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script>
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.3' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+<script data-pjax>
+  var updateTime = _$('#post-update-time')?.innerHTML;
+
+  if (updateTime) {
+    const update = new Date(updateTime);
+    const now = new Date();
+    const diff = now - update;
+    const days = diff / 86400000;
+    const { daysAgo, message: template } = window.REIMU_CONFIG.outdate;
+    if (days >= daysAgo) {
+      let message = `This article was last updated on ${updateTime}. Please note that the content may no longer be applicable.`;
+      if (typeof template === 'string') {
+        message = template.replace(/{time}/, updateTime);
+      } else if (typeof template === 'object') {
+        const lang = document.documentElement.lang;
+        const messageKey = Object.keys(template).find(key => key.toLowerCase() === lang.toLowerCase());
+        if (messageKey && template[messageKey]) {
+          message = template[messageKey].replace(/{time}/, updateTime);
+        }
+      }
+      const blockquote = _$('#outdate-blockquote');
+      if (blockquote) {
+        blockquote.querySelectorAll('p')[1].innerText = message;
+        blockquote.style.display = 'flow-root';
+      }
+    }
+  }
+</script>
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+  
+<script src="/blog/js/service_worker.js"></script>
+
+
+
+    <script>
+      var setupAPlayer = () => {
+        if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+          if (window.matchMedia('(max-width: 959px)').matches) {
+            const meting = _$('meting-js');
+            if (meting) {
+              meting.setAttribute('fixed', 'true');
+              const aside = meting.parentNode?.parentNode;
+              if (aside?.tagName === 'ASIDE') {
+                meting.parentNode.removeChild(meting);
+                document.body.appendChild(meting);
+              }
+            }
+          }
+        }
+      };
+    </script>
+  
+<script src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL&#x2F;aORyw+5+HZoU6e" crossorigin="anonymous" defer onload="setupAPlayer()"></script>
+
+    
+<script src="https://npm.webcache.cn/meting@2.0.1/dist/Meting.min.js" integrity="sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8+0maanw1S&#x2F;IyB+Y4JG+ZDU7GpKE8" crossorigin="anonymous" defer></script>
+
+
+  
+<script src="https://npm.webcache.cn/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha384-HeUHqi0nVsPUm&#x2F;E0ss7OfnIV&#x2F;yD96JWB8ehZvUuoVax9DpNHL17jj9pdfXHzqDxm" crossorigin="anonymous" defer></script>
+
+  <script data-pjax>
+    if (document.readyState === "loading") {
+      document.addEventListener('DOMContentLoaded', () => {
+        pangu?.spacingPage();
+      });
+    } else {
+      pangu?.spacingPage();
+    }
+  </script>
+
+  </body>
+  </html>
