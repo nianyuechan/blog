@@ -338,7 +338,7 @@ comment:
     zh-TW: 說些什麼吧！
     ja: コメントを残す
     pt-BR: Deixe um comentário
-  default: waline # default comment system, when you enable multiple comment systems
+  default: giscus # default comment system, when you enable multiple comment systems
 
 # valine comment system. https://valine.js.org
 # version 1.5.1
@@ -360,8 +360,8 @@ valine:
 # https://waline.js.org/
 # version 2.15.8
 waline:
-  enable: true
-  serverURL: https://替换为你的Waline服务端地址
+  enable: false
+  serverURL: https://toshiwaline-rno5xhfi3-nianyuechans-projects.vercel.app
   # lang: zh-CN # deprecated, use html.lang instead
   locale: {} # https://waline.js.org/guide/features/i18n.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80
   emoji:
@@ -400,19 +400,19 @@ gitalk:
 
 # https://giscus.app/zh-CN
 giscus:
-  enable: false
-  repo:
-  repoId:
-  category:
-  categoryId:
-  mapping: mapping
+  enable: true
+  repo: nianyuechan/blog
+  repoId: R_kgDOR2-6cA
+  category: Announcements
+  categoryId: DIC_kwDOR2-6cM4C6L7A
+  mapping: pathname
   strict: 0
   reactionsEnabled: 1
   emitMetadata: 0
   inputPosition: bottom
   theme:
-    light:
-    dark:
+    light: preferred_color_scheme
+    dark: preferred_color_scheme
 
 # https://utteranc.es
 utterances:
