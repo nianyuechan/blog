@@ -5,7 +5,7 @@ tags:
   - 教程
   - Nahida
 categories:
-  - 技术
+  - 教程
 description: Nahida 工具的详细使用教程
 banner: /images/102188682_p0.png
 cover: /images/102188682_p0.png
