@@ -38,9 +38,6 @@
 <link rel="stylesheet" href="/blog/css/style.css">
 
   <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
-      
-<link rel="stylesheet" href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css" integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy+Ub9QgnxUYJmwOhYCK" crossorigin="anonymous">
-
     
 <script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
 
@@ -261,14 +258,6 @@
 
     </div>
     <footer class="article-footer">
-        <a data-aos="zoom-in" href="/blog/about/index.html#comments" class="article-comment-link">
-          <span class="post-comments-count waline-comment-count" data-path="/blog/about/index.html" itemprop="commentCount"></span>
-          留言
-        </a>
-        <span data-aos="zoom-in" class="article-visitor-link">
-          <span class="waline-pageview-count" data-path="/blog/about/">0</span>
-          <em class="post-meta-item-text">阅读量</em>
-        </span>
       
       
     </footer>
@@ -282,15 +271,15 @@
       <h2 class="comment-title">说些什么吧！</h2>
       <div class="comment-selector">
         <div class="comment-selector-wrap">
-            <div class="selector-item" data-selector="waline">
-              <span>waline</span>
+            <div class="selector-item" data-selector="giscus">
+              <span>giscus</span>
             </div>
         </div>
       </div>
     </div>
     <div class="comment-content">
-          <div class="comment waline-comment" data-aos="fade-up"
-            id="waline-comment">
+          <div class="comment giscus-comment" data-aos="fade-up"
+            id="giscus-comment">
           </div>
     </div>
   </section>
@@ -525,36 +514,83 @@
     return script;
   };
 
-  var commentConfigKeys = ["waline"];
+  var commentConfigKeys = ["giscus"];
   var commentConfig = {
-    waline: {
+    giscus: {
       enable: true,
       load: async () => {
-        const container = document.querySelector('.waline-comment');
+        const container = document.querySelector('.giscus-comment');
         if (!container) return;
         container.style.display = 'block';
 
-        let walineInit;
-        const walineCdn = 'https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.mjs';
-        const walineIntegrity = 'sha384-9sbqJjrfGjbkI6/PI4nU/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH/KinBEAZII/5';
+        // 删除可能已存在的 giscus 脚本和 iframe
+        const existingScript = container.querySelector('script[src*="giscus.app/client.js"]');
+        if (existingScript) existingScript.remove();
+        const existingFrame = document.querySelector('iframe.giscus-frame');
+        if (existingFrame) existingFrame.remove();
 
-        const module = await safeImport(walineCdn, walineIntegrity);
-        walineInit = module.init;
+        const giscusScript = document.createElement('script');
+        const domMode = document.documentElement.getAttribute("data-theme");
+        const defaultTheme = { dark: 'dark', light: 'light' };
+        const customTheme = {
+          dark: 'preferred_color_scheme' ? 'preferred_color_scheme' : new URL('/blog/css/giscus_reimu_dark.css', window.location.origin).href,
+          light:'preferred_color_scheme' ? 'preferred_color_scheme' : new URL('/blog/css/giscus_reimu_light.css', window.location.origin).href
+        }; 
+        const hasGiscusCorsHeader = async (url) => {
+          if (!url) return false;
+          if (!url.startsWith('http')) return true; // not a url, maybe a name of built-in theme
+          try {
+            let response = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+            if (response.status === 405) {
+              response = await fetch(url, { method: 'GET', cache: 'no-store' });
+            }
+            const allowOrigin = response.headers.get('access-control-allow-origin') || '';
+            return allowOrigin === '*' || allowOrigin.split(',').map(value => value.trim()).includes('https://giscus.app');
+          } catch {
+            return false;
+          }
+        };
+        let giscusTheme = defaultTheme;
+        const [darkCorsOk, lightCorsOk] = await Promise.all([
+          hasGiscusCorsHeader(customTheme.dark),
+          hasGiscusCorsHeader(customTheme.light)
+        ]);
+        if (darkCorsOk && lightCorsOk) {
+          giscusTheme = customTheme;
+        }
 
-        window.walineInstance = walineInit({
-          el: '.waline-comment',
-          serverURL: 'https://toshiwaline-rno5xhfi3-nianyuechans-projects.vercel.app',
-          lang: document.documentElement.lang || 'en',
-          locale: {},
-          emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"],
-          meta: ["nick","mail","link"],
-          requiredMeta: ["nick","mail"],
-          wordLimit: JSON.parse('0'),
-          comment: true,
-          pageSize: JSON.parse('10'),
-          dark: 'html[data-theme="dark"]',
-          pageview: JSON.parse('true'),
-        });
+        const docLang = document.documentElement.lang || 'en';
+        const langBase = docLang.split('-')[0];
+        const supportedLangs = ['ar', 'be', 'bg', 'ca', 'cs', 'da', 'de', 'en', 
+        'eo', 'es', 'eu', 'fa', 'fr', 'gr', 'hbs', 'he', 'hu', 'id', 'it', 'ja', 
+        'kh', 'ko', 'nl', 'pl', 'pt', 'ro', 'ru', 'th', 'tr', 'uk', 'uz', 'vi', 'zh-CN', 'zh-HK', 'zh-TW'];
+        const giscusLang = supportedLangs.includes(docLang) ? docLang : supportedLangs.includes(langBase) ? langBase : 'en';
+
+        giscusScript.src = 'https://giscus.app/client.js';
+        giscusScript.setAttribute('data-repo', 'nianyuechan/blog');
+        giscusScript.setAttribute('data-repo-id', 'R_kgDOR2-6cA');
+        giscusScript.setAttribute('data-category', 'Announcements'); 
+        giscusScript.setAttribute('data-category-id', 'DIC_kwDOR2-6cM4C6L7A');
+        giscusScript.setAttribute('data-mapping', '0');
+        giscusScript.setAttribute('data-strict', '0');
+        giscusScript.setAttribute('data-reactions-enabled', '1');
+        giscusScript.setAttribute('data-emit-metadata', '0');
+        giscusScript.setAttribute('data-input-position', 'bottom');
+        giscusScript.setAttribute('data-theme', domMode === 'dark' ? giscusTheme.dark : giscusTheme.light);
+        giscusScript.setAttribute('data-lang', giscusLang);
+        giscusScript.setAttribute('crossorigin', 'anonymous');
+        giscusScript.async = true;
+        container.appendChild(giscusScript);
+        const themeHandler = (e) => {
+          const isDark = e.detail.isDark;
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe || !iframe.contentWindow) {
+            document.body.removeEventListener('reimu:theme-set', themeHandler);
+            return;
+          }
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: isDark ? giscusTheme.dark : giscusTheme.light } } }, 'https://giscus.app');
+        };
+        document.body.addEventListener('reimu:theme-set', themeHandler);
       }
     },
   }
@@ -574,7 +610,7 @@
     
     // 3. 如果localStorage无效，检查配置的默认评论系统
     if (!defaultComment) {
-      var configDefault = 'waline';
+      var configDefault = 'giscus';
       if (commentConfig[configDefault]?.enable) {
         defaultComment = configDefault;
       }
