@@ -16,6 +16,31 @@ toc: true
 
 ## 插件列表
 
+### 插件导航
+- [Atlas](#atlas)
+- [arknights-plugin](#arknights-plugin)
+- [earth-k-plugin](#earth-k-plugin)
+- [FanSky_Qs](#fansky_qs)
+- [flower-plugin](#flower-plugin)
+- [genshin](#genshin)
+- [liangshi-calc](#liangshi-calc)
+- [logier-plugin](#logier-plugin)
+- [mc-plugin](#mc-plugin)
+- [memz-plugin](#memz-plugin)
+- [mora-plugin](#mora-plugin)
+- [nai-plugin](#nai-plugin)
+- [phi-plugin](#phi-plugin)
+- [rconsole-plugin](#rconsole-plugin)
+- [San-plugin](#san-plugin)
+- [StarRail-plugin](#starrail-plugin)
+- [TRSS-Plugin](#trss-plugin)
+- [waves-plugin](#waves-plugin)
+- [xianxin-plugin](#xianxin-plugin)
+- [xitian-plugin](#xitian-plugin)
+- [y-tian-plugin](#y-tian-plugin)
+- [yenai-plugin](#yenai-plugin)
+- [yunzai-plugin-deer-pipe](#yunzai-plugin-deer-pipe)
+
 ### Atlas
 - **项目地址**：{% link "https://gitee.com/Nwflower/atlas" "Atlas 插件" "auto" %}
 - **插件简介**：适用于V3版本及以上Yunzai-Bot的图鉴查询插件，可通过Yunzai-Bot查询游戏图鉴，插件代码严格遵循ES6规范
