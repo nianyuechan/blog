@@ -44,6 +44,15 @@ toc: true
 bash <(curl -L gitee.com/TimeRainStarSky/TRSS_AllBot/raw/main/Install.sh)
 ```
 
+等待进度条跑完以后按照提示输入：
+```bash
+tsab
+```
+
 然后此时你会看到这样一个界面：
 
 {% image /images/screenshot_20260403_190412.webp "安装界面" %}
+
+Nahida的本体是TRSS-Yunzai，当然你也可以选择TRSS的前身Miao-Yunzai，那边的搭建教程也挺多的，两者的差距其实不大，除了有些插件不兼容TRSS之外
+
+点击回车会提示你安装，接着回车就好了
