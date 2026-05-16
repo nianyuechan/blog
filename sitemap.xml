@@ -2,7 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://nianyuechan.github.io/blog/2026/05/16/%E5%BF%85%E8%AF%BB-%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%89%8D%E5%87%86%E5%A4%87/</loc>
+    <loc>https://nianyuechan.github.io/blog/2026/05/05/my-best-friend/</loc>
+    
+    <lastmod>2026-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://nianyuechan.github.io/blog/2026/04/28/close-friend/</loc>
+    
+    <lastmod>2026-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://nianyuechan.github.io/blog/2025/12/27/about-birthday/</loc>
+    
+    <lastmod>2026-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://nianyuechan.github.io/blog/2025/09/01/farewell/</loc>
+    
+    <lastmod>2026-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://nianyuechan.github.io/blog/2025/08/29/about-summer-vacation/</loc>
+    
+    <lastmod>2026-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://nianyuechan.github.io/blog/2026/05/16/iam-installation-guide/</loc>
     
     <lastmod>2026-05-16</lastmod>
     
@@ -20,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://nianyuechan.github.io/blog/2026/04/02/%E7%A4%BA%E4%BE%8B/</loc>
+    <loc>https://nianyuechan.github.io/blog/2026/04/02/theme-showcase/</loc>
     
     <lastmod>2026-05-16</lastmod>
     
@@ -72,13 +117,6 @@
   </url>
   
   <url>
-    <loc>https://nianyuechan.github.io/blog/tags/Nahida/</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://nianyuechan.github.io/blog/tags/git/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -86,28 +124,14 @@
   </url>
   
   <url>
-    <loc>https://nianyuechan.github.io/blog/tags/%E6%A0%B7%E5%BC%8F/</loc>
+    <loc>https://nianyuechan.github.io/blog/tags/Nahida/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://nianyuechan.github.io/blog/tags/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://nianyuechan.github.io/blog/tags/Markdown/</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://nianyuechan.github.io/blog/tags/%E4%B8%BB%E9%A2%98/</loc>
+    <loc>https://nianyuechan.github.io/blog/tags/VRChat/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -141,6 +165,34 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://nianyuechan.github.io/blog/tags/%E6%A0%B7%E5%BC%8F/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nianyuechan.github.io/blog/tags/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nianyuechan.github.io/blog/tags/Markdown/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nianyuechan.github.io/blog/tags/%E4%B8%BB%E9%A2%98/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -151,7 +203,7 @@
   </url>
   
   <url>
-    <loc>https://nianyuechan.github.io/blog/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <loc>https://nianyuechan.github.io/blog/categories/VRC/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -159,6 +211,13 @@
   
   <url>
     <loc>https://nianyuechan.github.io/blog/categories/%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://nianyuechan.github.io/blog/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

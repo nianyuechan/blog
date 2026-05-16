@@ -21,12 +21,38 @@
     <category term="整合包" scheme="https://nianyuechan.github.io/blog/tags/%E6%95%B4%E5%90%88%E5%8C%85/"/>
     <category term="Ice and M" scheme="https://nianyuechan.github.io/blog/tags/Ice-and-M/"/>
     <category term="PCL2" scheme="https://nianyuechan.github.io/blog/tags/PCL2/"/>
-    <id>https://nianyuechan.github.io/blog/2026/05/16/%E5%BF%85%E8%AF%BB-%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%89%8D%E5%87%86%E5%A4%87/</id>
-    <link href="https://nianyuechan.github.io/blog/2026/05/16/%E5%BF%85%E8%AF%BB-%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E%E4%B8%8E%E6%B8%B8%E6%88%8F%E5%89%8D%E5%87%86%E5%A4%87/"/>
+    <id>https://nianyuechan.github.io/blog/2026/05/16/iam-installation-guide/</id>
+    <link href="https://nianyuechan.github.io/blog/2026/05/16/iam-installation-guide/"/>
     <published>2026-05-16T04:00:00.000Z</published>
     <summary>Ice and M 整合包 v0.12 安装说明与游戏前准备指南</summary>
     <title>必读 - 安装说明与游戏前准备</title>
     <updated>2026-05-16T14:13:22.959Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>年越·Rukawa</name>
+    </author>
+    <category term="VRC" scheme="https://nianyuechan.github.io/blog/categories/VRC/"/>
+    <category term="VRChat" scheme="https://nianyuechan.github.io/blog/tags/VRChat/"/>
+    <id>https://nianyuechan.github.io/blog/2026/05/05/my-best-friend/</id>
+    <link href="https://nianyuechan.github.io/blog/2026/05/05/my-best-friend/"/>
+    <published>2026-05-04T16:00:00.000Z</published>
+    <summary>对我来说，这就是这个游戏的真结局吧</summary>
+    <title>（真结局）My Best Friend</title>
+    <updated>2026-05-16T16:48:04.100Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>年越·Rukawa</name>
+    </author>
+    <category term="VRC" scheme="https://nianyuechan.github.io/blog/categories/VRC/"/>
+    <category term="VRChat" scheme="https://nianyuechan.github.io/blog/tags/VRChat/"/>
+    <id>https://nianyuechan.github.io/blog/2026/04/28/close-friend/</id>
+    <link href="https://nianyuechan.github.io/blog/2026/04/28/close-friend/"/>
+    <published>2026-04-27T16:00:00.000Z</published>
+    <summary>从入坑VRC开始，不知不觉快一年了</summary>
+    <title>密友</title>
+    <updated>2026-05-16T16:39:38.848Z</updated>
   </entry>
   <entry>
     <author>
@@ -48,8 +74,8 @@
     </author>
     <category term="教程" scheme="https://nianyuechan.github.io/blog/categories/%E6%95%99%E7%A8%8B/"/>
     <category term="教程" scheme="https://nianyuechan.github.io/blog/tags/%E6%95%99%E7%A8%8B/"/>
-    <category term="Nahida" scheme="https://nianyuechan.github.io/blog/tags/Nahida/"/>
     <category term="git" scheme="https://nianyuechan.github.io/blog/tags/git/"/>
+    <category term="Nahida" scheme="https://nianyuechan.github.io/blog/tags/Nahida/"/>
     <id>https://nianyuechan.github.io/blog/2026/04/02/Nahida/</id>
     <link href="https://nianyuechan.github.io/blog/2026/04/02/Nahida/"/>
     <published>2026-04-02T07:35:00.000Z</published>
@@ -66,11 +92,50 @@
     <category term="测试" scheme="https://nianyuechan.github.io/blog/tags/%E6%B5%8B%E8%AF%95/"/>
     <category term="Markdown" scheme="https://nianyuechan.github.io/blog/tags/Markdown/"/>
     <category term="主题" scheme="https://nianyuechan.github.io/blog/tags/%E4%B8%BB%E9%A2%98/"/>
-    <id>https://nianyuechan.github.io/blog/2026/04/02/%E7%A4%BA%E4%BE%8B/</id>
-    <link href="https://nianyuechan.github.io/blog/2026/04/02/%E7%A4%BA%E4%BE%8B/"/>
+    <id>https://nianyuechan.github.io/blog/2026/04/02/theme-showcase/</id>
+    <link href="https://nianyuechan.github.io/blog/2026/04/02/theme-showcase/"/>
     <published>2026-04-02T04:00:00.000Z</published>
     <summary>展示 hexo-theme-reimu 主题的各种功能和样式</summary>
     <title>示例 - hexo-theme-reimu 功能展示</title>
     <updated>2026-05-16T13:11:05.484Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>年越·Rukawa</name>
+    </author>
+    <category term="VRC" scheme="https://nianyuechan.github.io/blog/categories/VRC/"/>
+    <category term="VRChat" scheme="https://nianyuechan.github.io/blog/tags/VRChat/"/>
+    <id>https://nianyuechan.github.io/blog/2025/12/27/about-birthday/</id>
+    <link href="https://nianyuechan.github.io/blog/2025/12/27/about-birthday/"/>
+    <published>2025-12-26T16:00:00.000Z</published>
+    <summary>一条定时发布的动态</summary>
+    <title>关于生日</title>
+    <updated>2026-05-16T16:36:38.193Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>年越·Rukawa</name>
+    </author>
+    <category term="VRC" scheme="https://nianyuechan.github.io/blog/categories/VRC/"/>
+    <category term="VRChat" scheme="https://nianyuechan.github.io/blog/tags/VRChat/"/>
+    <id>https://nianyuechan.github.io/blog/2025/09/01/farewell/</id>
+    <link href="https://nianyuechan.github.io/blog/2025/09/01/farewell/"/>
+    <published>2025-08-31T16:00:00.000Z</published>
+    <summary>在虚拟世界的休憩也该结束了</summary>
+    <title>离别</title>
+    <updated>2026-05-16T16:29:50.839Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>年越·Rukawa</name>
+    </author>
+    <category term="VRC" scheme="https://nianyuechan.github.io/blog/categories/VRC/"/>
+    <category term="VRChat" scheme="https://nianyuechan.github.io/blog/tags/VRChat/"/>
+    <id>https://nianyuechan.github.io/blog/2025/08/29/about-summer-vacation/</id>
+    <link href="https://nianyuechan.github.io/blog/2025/08/29/about-summer-vacation/"/>
+    <published>2025-08-28T16:00:00.000Z</published>
+    <summary>在 VRChat 里，两个孤独的灵魂互相取暖</summary>
+    <title>关于暑假</title>
+    <updated>2026-05-16T16:23:43.879Z</updated>
   </entry>
 </feed>
