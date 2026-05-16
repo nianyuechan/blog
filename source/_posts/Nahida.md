@@ -8,8 +8,8 @@ tags:
 categories:
     - 教程
 description: 如何搭建和使用Nahida
-banner: /images/100639369_p0.webp
-cover: /images/100639369_p0.webp
+banner: /images/Nahida/100639369_p0.webp
+cover: /images/Nahida/100639369_p0.webp
 sticky: true
 toc: true
 ---
@@ -26,15 +26,15 @@ toc: true
 
 - **node.js**
   Nahida是基于nodejs框架运作的，所以相当于Nahida的底层，请确保您的电脑内包含此环境
-  {% externalLinkCard "Node.js官网" "https://nodejs.org/en/download" "/images/ol9RsKbgPR.webp" %}
+  {% externalLinkCard "Node.js官网" "https://nodejs.org/en/download" "/images/Nahida/ol9RsKbgPR.webp" %}
 
 - **git**
   虽然不是必须的，但是为了后面的部署，建议安装
-  {% externalLinkCard "git官网" "https://git-scm.com/downloads" "/images/OIP-C.webp" %}
+  {% externalLinkCard "git官网" "https://git-scm.com/downloads" "/images/Nahida/OIP-C.webp" %}
 
 - **mysy2**
   Nahida在mysy2环境下运行的，所以也要一起安装
-  {% externalLinkCard "mysy2官网" "https://www.msys2.org/" "/images/ol9RsKbgPR.webp" %}
+  {% externalLinkCard "mysy2官网" "https://www.msys2.org/" "/images/Nahida/ol9RsKbgPR.webp" %}
 
 ### 开始安装
 
@@ -51,7 +51,7 @@ tsab
 
 然后此时你会看到这样一个界面：
 
-{% image /images/screenshot_20260403_190412.webp "安装界面" %}
+{% image /images/Nahida/screenshot_20260403_190412.webp "安装界面" %}
 
 Nahida的本体是TRSS-Yunzai，当然你也可以选择TRSS的前身Miao-Yunzai，那边的搭建教程也挺多的，两者的差距其实不大，除了有些插件不兼容TRSS之外
 

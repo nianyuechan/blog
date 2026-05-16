@@ -7,8 +7,8 @@ tags:
 categories:
   - 教程
 description: Nahida 工具的详细使用教程
-banner: /images/102188682_p0.png
-cover: /images/102188682_p0.png
+banner: /images/guide/102188682_p0.png
+cover: /images/guide/102188682_p0.png
 toc: true
 sticky: true
 ---
