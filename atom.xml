@@ -11,7 +11,7 @@
   <rights>All rights reserved 2026, 年越·Rukawa</rights>
   <subtitle>技术与生活的交汇点</subtitle>
   <title>大家の幻想乡</title>
-  <updated>2026-05-16T11:55:52.992Z</updated>
+  <updated>2026-05-16T14:13:22.959Z</updated>
   <entry>
     <author>
       <name>年越·Rukawa</name>
@@ -26,7 +26,7 @@
     <published>2026-05-16T04:00:00.000Z</published>
     <summary>Ice and M 整合包 v0.12 安装说明与游戏前准备指南</summary>
     <title>必读 - 安装说明与游戏前准备</title>
-    <updated>2026-05-16T11:55:52.992Z</updated>
+    <updated>2026-05-16T14:13:22.959Z</updated>
   </entry>
   <entry>
     <author>
@@ -40,7 +40,7 @@
     <published>2026-04-04T16:00:00.000Z</published>
     <summary>Nahida 工具的详细使用教程</summary>
     <title>Nahida 使用教程</title>
-    <updated>2026-05-16T10:00:02.735Z</updated>
+    <updated>2026-05-16T13:11:05.487Z</updated>
   </entry>
   <entry>
     <author>
@@ -48,14 +48,14 @@
     </author>
     <category term="教程" scheme="https://nianyuechan.github.io/blog/categories/%E6%95%99%E7%A8%8B/"/>
     <category term="教程" scheme="https://nianyuechan.github.io/blog/tags/%E6%95%99%E7%A8%8B/"/>
-    <category term="git" scheme="https://nianyuechan.github.io/blog/tags/git/"/>
     <category term="Nahida" scheme="https://nianyuechan.github.io/blog/tags/Nahida/"/>
+    <category term="git" scheme="https://nianyuechan.github.io/blog/tags/git/"/>
     <id>https://nianyuechan.github.io/blog/2026/04/02/Nahida/</id>
     <link href="https://nianyuechan.github.io/blog/2026/04/02/Nahida/"/>
     <published>2026-04-02T07:35:00.000Z</published>
     <summary>如何搭建和使用Nahida</summary>
     <title>Nahida搭建教程</title>
-    <updated>2026-05-16T10:00:02.737Z</updated>
+    <updated>2026-05-16T13:11:05.483Z</updated>
   </entry>
   <entry>
     <author>
@@ -71,6 +71,6 @@
     <published>2026-04-02T04:00:00.000Z</published>
     <summary>展示 hexo-theme-reimu 主题的各种功能和样式</summary>
     <title>示例 - hexo-theme-reimu 功能展示</title>
-    <updated>2026-05-16T10:00:02.734Z</updated>
+    <updated>2026-05-16T13:11:05.484Z</updated>
   </entry>
 </feed>
