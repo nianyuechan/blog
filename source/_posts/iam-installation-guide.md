@@ -8,7 +8,7 @@ tags:
   - PCL2
 categories:
   - 游戏
-description: Ice and M 整合包 v0.12 安装说明与游戏前准备指南
+description: Ice and M 整合包 v0.13 安装说明与游戏前准备指南
 toc: true
 ---
 
@@ -36,10 +36,6 @@ toc: true
 
 **Plain Craft Launcher 2.exe 为游戏启动器，右键，并在右键菜单上点击创建快捷方式，并把快捷方式移动到桌面上（快捷方式可以重命名，叫什么都可以）**
 
-{% image /images/iam-guide/install-step4.webp "创建快捷方式" %}
-
-{% image /images/iam-guide/install-step5.webp "版本隔离" %}
-
 **建议开启版本隔离，方便后续安装更新包**
 
 **根据你电脑的内存大小设置游戏内存**
@@ -54,7 +50,7 @@ toc: true
 **除非你的内存非常非常大且电脑性能非常好，否则不要跳过这一步**
 :::
 
-为了优化内存，需要 jdk 版本为 [graalvm-jdk25](https://download.oracle.com/graalvm/25/latest/graalvm-jdk-25_windows-x64_bin.zip)，而不是 17， `也不是普通的 jdk25`
+为了优化内存，需要 jdk 版本为 [graalvm-jdk25](https://download.oracle.com/graalvm/25/latest/graalvm-jdk-25_windows-x64_bin.zip)（按ctrl点击蓝色字下载），而不是 17，`也不是普通的 jdk25`
 
 下载完成后，选择 `解压到当前文件夹`
 
@@ -82,21 +78,13 @@ toc: true
 
 ---
 
-## 下载启动参数并导入
+## 导入启动参数
 
-建议将启动参数放入 `C:\Program Files\Java` 路径中，这不是必须的，你可以将其放在其他路径。
+复制以下内容，粘贴至 `版本独立设置 → 最下面高级选项 → java 虚拟机参数`
 
-然后在资源管理器中右键 `JAVA25zgc.txt`，点击属性
-
-复制 `属性 → 安全 → 对象名称`
-
-{% image /images/iam-guide/install-step10.webp "复制对象名称" %}
-
-粘贴到 `版本独立设置 → 最下面高级选项 → java 虚拟机参数`
-
-然后在参数前后增加 `@"` 和 `"`
-
-即：`@"对象名称"`
+```
+-XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+UseZGC -XX:+ExplicitGCInvokesConcurrent -XX:ZCollectionInterval=10 -XX:+AlwaysPreTouch -XX:+UseNUMA -XX:+PerfDisableSharedMem -XX:+UseCompactObjectHeaders -XX:+ExplicitGCInvokesConcurrent -XX:+UseNUMA -XX:+AlwaysActAsServerClassMachine -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=240000 -XX:NodeLimitFudgeFactor=8000 -XX:ReservedCodeCacheSize=400M -XX:NonNMethodCodeHeapSize=12M -XX:ProfiledCodeHeapSize=194M -XX:NonProfiledCodeHeapSize=194M -XX:NmethodSweepActivity=1 -XX:+UseFastStosb -XX:+UseCriticalJavaThreadPriority -XX:+UseVectorCmov -XX:+PerfDisableSharedMem -XX:+UseFastUnorderedTimeStamps -XX:ThreadPriorityPolicy=1 -XX:AllocatePrefetchStyle=3 -XX:+UseNewLongLShift -XX:+UseXmmI2D -XX:+UseXmmI2F -XX:+AlignVector -XX:+OptimizeFill -XX:+EnableVectorSupport -XX:+UseCharacterCompareIntrinsics -XX:+UseVectorStubs -XX:UseAVX=2 -XX:UseSSE=4 -XX:+EagerJVMCI -XX:+EnableJVMCI -XX:+UseJVMCICompiler -Djdk.graal.CompilerConfiguration=enterprise -Djdk.graal.UsePriorityInlining=true -Djdk.graal.Vectorization=true -Djdk.graal.LoopInversion=true -Djdk.graal.LoopRotation=true -Djdk.graal.VectorizeHashes=true -Djdk.graal.VectorizeSIMD=true -Djdk.graal.TuneInlinerExploration=1 -Djdk.graal.EnterprisePartialUnroll=true -Djdk.graal.DetectInvertedLoopsAsCounted=true -Dfml.queryResult=confirm
+```
 
 {% image /images/iam-guide/install-step11.webp "java虚拟机参数" %}
 
