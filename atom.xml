@@ -11,7 +11,22 @@
   <rights>All rights reserved 2026, 年越·Rukawa</rights>
   <subtitle>技术与生活的交汇点</subtitle>
   <title>大家の幻想乡</title>
-  <updated>2026-06-19T03:58:30.612Z</updated>
+  <updated>2026-06-19T06:09:51.100Z</updated>
+  <entry>
+    <author>
+      <name>年越·Rukawa</name>
+    </author>
+    <category term="游戏" scheme="https://nianyuechan.github.io/blog/categories/%E6%B8%B8%E6%88%8F/"/>
+    <category term="Minecraft" scheme="https://nianyuechan.github.io/blog/tags/Minecraft/"/>
+    <category term="Ice and M" scheme="https://nianyuechan.github.io/blog/tags/Ice-and-M/"/>
+    <category term="存档兼容性" scheme="https://nianyuechan.github.io/blog/tags/%E5%AD%98%E6%A1%A3%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+    <id>https://nianyuechan.github.io/blog/2026/06/19/save-compatibility-fix/</id>
+    <link href="https://nianyuechan.github.io/blog/2026/06/19/save-compatibility-fix/"/>
+    <published>2026-06-19T04:30:00.000Z</published>
+    <summary>解决Ice and M整合包0.83及以上版本无法进入旧版存档的问题</summary>
+    <title>Solution for versions 0.83+ unable to access old saves</title>
+    <updated>2026-06-19T06:09:51.100Z</updated>
+  </entry>
   <entry>
     <author>
       <name>年越·Rukawa</name>
