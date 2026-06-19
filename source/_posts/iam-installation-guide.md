@@ -36,6 +36,10 @@ toc: true
 
 **Plain Craft Launcher 2.exe 为游戏启动器，右键，并在右键菜单上点击创建快捷方式，并把快捷方式移动到桌面上（快捷方式可以重命名，叫什么都可以）**
 
+{% image /images/iam-guide/install-step24.webp "Desktop shortcut example 1" %}
+
+{% image /images/iam-guide/install-step25.webp "Desktop shortcut example 2" %}
+
 **建议开启版本隔离，方便后续安装更新包**
 
 **根据你电脑的内存大小设置游戏内存**
@@ -44,21 +48,21 @@ toc: true
 
 ---
 
-## 下载 graalvm-jdk25
+## 下载 graalvm-jdk25（可选）
 
 ::: warning
-**除非你的内存非常非常大且电脑性能非常好，否则不要跳过这一步**
+**graalvm-jdk25 用于搭配优化参数使游戏内存占用降低，导入优化参数的游戏版本必须指定 jdk 为 graalvm25 否则无法启动游戏！jdk17 和 jdk25 普通版都不行！只指定 jdk 为 graalvm25 不使用优化参数则没有作用！**
 :::
 
-为了优化内存，需要 jdk 版本为 [graalvm-jdk25](https://download.oracle.com/graalvm/25/latest/graalvm-jdk-25_windows-x64_bin.zip)（按ctrl点击蓝色字下载），而不是 17，`也不是普通的 jdk25`
+下载链接：[graalvm-jdk25](https://download.oracle.com/graalvm/25/latest/graalvm-jdk-25_windows-x64_bin.zip)
 
-下载完成后，选择 `解压到当前文件夹`
+下载完成后，在你要安装jdk的路径选择`解压到当前文件夹`
 
 {% image /images/iam-guide/install-step6.webp "解压文件" %}
 
 建议将解压后的文件夹放入 `C:\Program Files\Java` 路径中，这不是必须的，你可以将其放在其他路径，但 `不要让它留在下载文件夹里，以防清理垃圾时误删`
 
-移动后在 `设置 → 启动器选项 → 游戏 java` 中点击 `自动搜索`，让启动器知道你安装新 jdk 了
+移动后在 `设置 → 启动器选项 → 游戏 java` 中点击 `自动搜索`，`让启动器知道你安装新 jdk 了`
 
 {% image /images/iam-guide/install-step7.webp "自动搜索jdk" %}
 
@@ -78,7 +82,7 @@ toc: true
 
 ---
 
-## 导入启动参数
+## 导入启动参数（可选）
 
 复制以下内容，粘贴至 `版本独立设置 → 最下面高级选项 → java 虚拟机参数`
 
@@ -101,7 +105,7 @@ toc: true
 `为什么多了这一步？` 因为优化参数已选择垃圾收集器，而 PCL2 启动器最近出了设置垃圾收集器的功能，同时使用优化参数 + PCL 的内存设置时，会启用 2 个不同的垃圾收集器导致游戏无法启动！
 
 ::: danger
-注意：修改的是 `版本独立设置，而不是全局设置！`修改全局可能导致其他客户端爆炸！
+注意：修改的是版本独立设置，而不是全局设置!修改全局会导致其他游戏版本无法启动!
 :::
 
 {% image /images/iam-guide/install-step12.webp "垃圾回收器设置" %}
